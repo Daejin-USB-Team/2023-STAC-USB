@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d5751a2c961df945a34295ccf5e576d, type: 3}
-  m_Name: WayPoint
+  m_Name: WayPoint01
   m_EditorClassIdentifier: 
   m_Cells:
   - m_Tile: {fileID: 0}
@@ -41,5 +41,5 @@ MonoBehaviour:
   m_LastPickedCellSize: {x: 1, y: 1, z: 1}
   m_LastPickedCellGap: {x: 0, y: 0, z: 0}
   m_Anchor: {x: 0.5, y: 0.5, z: 0.5}
-  m_Prefab: {fileID: 2717964056329806465, guid: 18fc4eac79f5d09498dcd1b7a04b787a,
+  m_Prefab: {fileID: 8829838734794976212, guid: e04cc9a1bc279d44d99e783e01e887cf,
     type: 3}
