@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//김지우 개 병신 버러지 새끼
 public class Slow : MonoBehaviour
 {
 	private	TowerWeapon	towerWeapon;
