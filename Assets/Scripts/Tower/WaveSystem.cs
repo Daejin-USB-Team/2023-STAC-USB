@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 public class WaveSystem : MonoBehaviour
 {
 	[SerializeField]
@@ -11,7 +11,15 @@ public class WaveSystem : MonoBehaviour
 	// 웨이브 정보 출력을 위한 Get 프로퍼티 (현재 웨이브, 총 웨이브)
 	public	int				CurrentWave => currentWaveIndex+1;		// 시작이 0이기 때문에 +1
 	public	int				MaxWave => waves.Length;
-
+	public void Start()
+	{
+		StartCoroutine("AutoStartWave");
+	}
+	private IEnumerator AutoStartWave()
+	{
+		StartWave();
+		yield return new WaitForSeconds(20.0f);
+	}
 	public void StartWave()
 	{
 		// 현재 맵에 적이 없고, Wave가 남아있으면
@@ -26,7 +34,7 @@ public class WaveSystem : MonoBehaviour
 }
 
 [System.Serializable]
-public struct Wave
+public struct AutoWave
 {
     public  float        spawnTime;     // 현재 웨이브 적 생성 주기
     public  int          maxEnemyCount; // 현재 웨이브 적 등장 숫자
