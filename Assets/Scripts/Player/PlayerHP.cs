@@ -6,29 +6,19 @@ public class PlayerHP : MonoBehaviour
 {
     [SerializeField]
     private Image   imageScreen;    // 전체화면을 덮는 빨간색 이미지
-    [SerializeField]
-    private float   maxHP = 20;     // 최대 체력
-    private float   currentHP;      // 현재 체력
-
-    public  float   MaxHP => maxHP;
-    public  float   CurrentHP => currentHP;
-
-    private void Awake()
-    {
-        currentHP = maxHP;          // 현재 체력을 최대 체력과 같게 설정
-    }
-
+    public static int health = 5;
+    public Image[] hearts;
+    public Sprite fullHp;
+    public Sprite emptyHp; 
     public void TakeDamage(float damage)
     {
         // 현재 체력을 damage만큼 감소
-        currentHP -= damage;
-
-        StopCoroutine("HitAlphaAnimation");
-        StartCoroutine("HitAlphaAnimation");
+        HpManager.health--;
 
         // 체력이 0이 되면 게임오버
-        if ( currentHP <= 0 )
+        if (HpManager.health <= 0 )
         {
+            gameObject.SetActive(false);
         }
     }
 
