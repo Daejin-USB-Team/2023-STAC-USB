@@ -220,6 +220,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 893898836}
     m_Modifications:
+    - target: {fileID: 1158227058461316, guid: 30bdd5fddc725438796726c39f29cd83, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1297610413772492, guid: 30bdd5fddc725438796726c39f29cd83, type: 3}
       propertyPath: m_Name
       value: Workspace
@@ -240,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 224317500553361072, guid: 30bdd5fddc725438796726c39f29cd83,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.007602584
+      value: -0.009671445
       objectReference: {fileID: 0}
     - target: {fileID: 224396373763270812, guid: 30bdd5fddc725438796726c39f29cd83,
         type: 3}
@@ -381,6 +385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505045113268848972, guid: 30bdd5fddc725438796726c39f29cd83,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
