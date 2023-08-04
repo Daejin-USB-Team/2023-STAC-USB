@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/Start.unity
     guid: 617c09ecb1e63fe439d3b8de28142956
   - enabled: 1
     path: Assets/Scenes/Camp.unity
     guid: 2784975adb24c4146acb7028aa8f8fef
   - enabled: 1
-    path: Assets/Scenes/Start.unity
+    path: Assets/Scenes/Main.unity
     guid: c130af2a599d6f549802d4ee78f4c0f4
   - enabled: 1
     path: Assets/Scenes/Cher.unity
@@ -24,3 +24,4 @@ EditorBuildSettings:
     path: Assets/Scenes/InGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
