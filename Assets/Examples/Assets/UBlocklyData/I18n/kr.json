@@ -248,11 +248,11 @@
   /// tooltip - See [https://en.wikipedia.org/wiki/Logical_conjunction https://en.wikipedia.org/wiki/Logical_conjunction].
   "LOGIC_OPERATION_TOOLTIP_AND": "두 입력이 모두 true이면 true를 반환합니다.",
   /// block text - See [https://en.wikipedia.org/wiki/Logical_conjunction https://en.wikipedia.org/wiki/Logical_conjunction].\n(Identical|And)
-  "LOGIC_OPERATION_AND": "and",
+  "LOGIC_OPERATION_AND": "둘다 참일때",
   /// block text - See [https://en.wikipedia.org/wiki/Disjunction https://en.wikipedia.org/wiki/Disjunction].
   "LOGIC_OPERATION_TOOLTIP_OR": "입력 중 하나 이상이 true이면 true를 반환합니다.",
   /// block text - See [https://en.wikipedia.org/wiki/Disjunction https://en.wikipedia.org/wiki/Disjunction].\n(Identical|Or)
-  "LOGIC_OPERATION_OR": "or",
+  "LOGIC_OPERATION_OR": "둘 중 하나라도 참일때",
 
   /// url - Information about logical negation.  The translation of [https://en.wikipedia.org/wiki/Logical_negation https://en.wikipedia.org/wiki/Logical_negation] is recommended if it exists in the target language.
   "LOGIC_NEGATE_HELPURL": "https://github.com/google/blockly/wiki/Logic#not",
