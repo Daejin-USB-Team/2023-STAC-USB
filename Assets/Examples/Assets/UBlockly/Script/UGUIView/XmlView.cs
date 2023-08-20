@@ -59,7 +59,7 @@ namespace UBlockly.UGUI
         {
             if (string.IsNullOrEmpty(mSavePath))
             {
-                mSavePath = System.IO.Path.Combine(Application.persistentDataPath, "XmlSave");
+                mSavePath = System.IO.Path.Combine(Application.dataPath, "XmlSave");
                 if (!System.IO.Directory.Exists(mSavePath))
                     System.IO.Directory.CreateDirectory(mSavePath);
             }
@@ -70,20 +70,24 @@ namespace UBlockly.UGUI
         {
             HideSavePanel();
             HideLoadPanel();
-
+            m_SaveBtn.onClick.AddListener(SaveXml);
+            /*
             m_SaveBtn.onClick.AddListener(() =>
             {
+                
                 if (!mIsSavePanelShow) ShowSavePanel();
                 else HideSavePanel();
+                
             });
-
+            
+            */
             m_LoadBtn.onClick.AddListener(() =>
             {
                 if (!mIsLoadPanelShow) ShowLoadPanel();
                 else HideLoadPanel();
             });
             
-            m_SaveOkBtn.onClick.AddListener(SaveXml);
+            //m_SaveOkBtn.onClick.AddListener(SaveXml);
         }
 
         protected virtual void ShowSavePanel()
@@ -128,11 +132,14 @@ namespace UBlockly.UGUI
             var dom = UBlockly.Xml.WorkspaceToDom(BlocklyUI.WorkspaceView.Workspace);
             string text = UBlockly.Xml.DomToText(dom);
             string path = GetSavePath();
+            /*
             if (!string.IsNullOrEmpty(m_SaveNameInput.text))
                 path = System.IO.Path.Combine(path, m_SaveNameInput.text + ".xml");
             else
                 path = System.IO.Path.Combine(path, "Default.xml");
-
+            */
+            path = System.IO.Path.Combine(path, "Default.xml");
+            Debug.Log("저장됨");
             System.IO.File.WriteAllText(path, text);
             
             HideSavePanel();

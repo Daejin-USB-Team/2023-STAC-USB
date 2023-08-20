@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UnrealImg-removebg-preview_0: 6511462296741931389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

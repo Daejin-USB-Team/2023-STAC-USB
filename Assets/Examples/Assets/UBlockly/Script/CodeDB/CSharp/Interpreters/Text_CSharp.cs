@@ -43,7 +43,19 @@ namespace UBlockly
         {
             CmdEnumerator ctor = CSharp.Interpreter.ValueReturn(block, "TEXT", new DataStruct(""));
             yield return ctor;
-            DataStruct input = ctor.Data; 
+            DataStruct input = ctor.Data;
+
+            // OutputScript 참조 생성 및 값 전달
+            OutputScript outputScript = UnityEngine.GameObject.FindObjectOfType<OutputScript>();
+            if (outputScript != null)
+            {
+                outputScript.ReceiveInputFromTextPrintCmdtor(input);
+            }
+            else
+            {
+                UnityEngine.Debug.Log("OutputScript 컴포넌트가 씬에 없습니다.");
+            }
+
             //todo: 暂时用Debug.Log，后面根据UI输出框再定
             UnityEngine.Debug.Log("c# print: " + input.ToString());
         }

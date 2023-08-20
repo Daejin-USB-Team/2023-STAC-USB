@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UnityImg-removebg-preview_0: 3140483132619766677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

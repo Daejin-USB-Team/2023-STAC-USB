@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UnrealImg_0: 5332636790415498363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
