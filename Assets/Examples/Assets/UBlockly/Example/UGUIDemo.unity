@@ -409,6 +409,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -224
       objectReference: {fileID: 0}
+    - target: {fileID: 6723923443526987272, guid: 30bdd5fddc725438796726c39f29cd83,
+        type: 3}
+      propertyPath: xmlPath
+      value: XmlSave/Default.xml
+      objectReference: {fileID: 0}
     - target: {fileID: 6997013141416930545, guid: 30bdd5fddc725438796726c39f29cd83,
         type: 3}
       propertyPath: m_text

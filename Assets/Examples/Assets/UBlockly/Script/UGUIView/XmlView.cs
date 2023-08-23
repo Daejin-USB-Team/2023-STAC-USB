@@ -53,18 +53,15 @@ namespace UBlockly.UGUI
             get { return m_LoadPanel.activeInHierarchy; }
         }
         
-        protected string mSavePath;
+    protected string mSavePath;
+        // Resources 폴더 경로
+    private const string ResourcePath = "XmlSave";
+       // Resources 폴더에 저장된 파일 경로 가져오기
+    private string GetResourcePath(string fileName)
+    {
+        return Path.Combine(ResourcePath, fileName);
+    }
 
-        protected string GetSavePath()
-        {
-            if (string.IsNullOrEmpty(mSavePath))
-            {
-                mSavePath = System.IO.Path.Combine(Application.dataPath, "XmlSave");
-                if (!System.IO.Directory.Exists(mSavePath))
-                    System.IO.Directory.CreateDirectory(mSavePath);
-            }
-            return mSavePath;
-        }
 
         private void Awake()
         {
@@ -100,22 +97,26 @@ namespace UBlockly.UGUI
         {
             m_SavePanel.SetActive(false);
         }
-
         protected virtual void ShowLoadPanel()
         {
             m_LoadPanel.SetActive(true);
             m_SavePanel.SetActive(false);
 
-            string[] xmlFiles = Directory.GetFiles(GetSavePath());
+            TextAsset[] xmlFiles = Resources.LoadAll<TextAsset>(ResourcePath);
             for (int i = 0; i < xmlFiles.Length; i++)
             {
-                string fileName = Path.GetFileNameWithoutExtension(xmlFiles[i]);
-                GameObject btnXml = GameObject.Instantiate(m_XmlBtnPrefab, m_ScrollContent, false);
-                btnXml.SetActive(true);
-                btnXml.GetComponentInChildren<Text>().text = fileName;
-                btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml(fileName));
+                string fileName = Path.GetFileNameWithoutExtension(xmlFiles[i].name);
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    GameObject btnXml = GameObject.Instantiate(m_XmlBtnPrefab, m_ScrollContent, false);
+                    btnXml.SetActive(true);
+                    btnXml.GetComponentInChildren<Text>().text = fileName;
+                    string tempFileName = fileName; // 클로저 문제 해결을 위해 임시 변수에 할당
+                    btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml(tempFileName));
+                }
             }
         }
+
 
         protected virtual void HideLoadPanel()
         {
@@ -131,49 +132,63 @@ namespace UBlockly.UGUI
         {
             var dom = UBlockly.Xml.WorkspaceToDom(BlocklyUI.WorkspaceView.Workspace);
             string text = UBlockly.Xml.DomToText(dom);
-            string path = GetSavePath();
-            /*
-            if (!string.IsNullOrEmpty(m_SaveNameInput.text))
-                path = System.IO.Path.Combine(path, m_SaveNameInput.text + ".xml");
-            else
-                path = System.IO.Path.Combine(path, "Default.xml");
-            */
-            path = System.IO.Path.Combine(path, "Default.xml");
-            Debug.Log("저장됨");
-            System.IO.File.WriteAllText(path, text);
-            
+
+            // 저장할 파일 이름 설정 (InputField의 값을 사용하려면 주석 해제)
+            //string fileName = !string.IsNullOrEmpty(m_SaveNameInput.text) ? 
+            //                  $"{m_SaveNameInput.text}.xml" : "Default.xml";
+
+            string fileName = "Default.xml";  // 기본 파일 이름은 Default.xml로 설정
+
+            string resourceFilePath = GetResourcePath(fileName);
+
+            TextAsset existingFile = Resources.Load<TextAsset>(resourceFilePath);
+
+            if (existingFile != null)
+            {
+                Debug.Log("파일이 이미 존재합니다. 덮어쓰시겠습니까?");
+                return;  // 이미 동일한 이름의 파일이 존재하면 중복 저장하지 않음.
+            }
+
+            string saveFolderPath = Path.Combine(Application.dataPath, "Resources", ResourcePath);
+
+            if (!Directory.Exists(saveFolderPath))
+                Directory.CreateDirectory(saveFolderPath);
+
+            StreamWriter writer =
+               new StreamWriter(Path.Combine(saveFolderPath, fileName));
+
+            writer.Write(text);
+
+            writer.Close();
+
             HideSavePanel();
         }
+
 
         protected virtual void LoadXml(string fileName)
         {
             StartCoroutine(AsyncLoadXml(fileName));
         }
-        
+
         IEnumerator AsyncLoadXml(string fileName)
         {
             BlocklyUI.WorkspaceView.CleanViews();
 
-            string path = System.IO.Path.Combine(GetSavePath(), fileName + ".xml");
-            string inputXml;
-            if (path.Contains("://"))
-            {
-                using (UnityWebRequest webRequest = UnityWebRequest.Get(path))
-                {
-                    yield return webRequest.SendWebRequest();
-                    if (webRequest.result != UnityWebRequest.Result.Success) {
-                        throw new Exception(webRequest.error + ": " + path);
-                    }
-                    inputXml = webRequest.downloadHandler.text;
-                }
-            }
-            else
-                inputXml = System.IO.File.ReadAllText(path);
+            string resourceFilePath = GetResourcePath(fileName);
 
-            var dom = UBlockly.Xml.TextToDom(inputXml);
+            TextAsset textAsset = Resources.Load<TextAsset>(resourceFilePath);
+
+            if (textAsset == null)
+            {
+                Debug.Log("파일을 찾을 수 없습니다.");
+                yield break;
+            }
+
+            var dom = UBlockly.Xml.TextToDom(textAsset.text);
+
             UBlockly.Xml.DomToWorkspace(dom, BlocklyUI.WorkspaceView.Workspace);
             BlocklyUI.WorkspaceView.BuildViews();
-            
+
             HideLoadPanel();
         }
     }

@@ -1,22 +1,3 @@
 <xml>
-    <variables>
-        <variable type="" id="^{{j;Wxeys(Iq[Fze/Fw">으하</variable>
-    </variables>
-    <block type="variables_set" id=".*z:MzZ;Yyrw/+KDfz}o" x="186" y="-192">
-        <field name="VAR" id="^{{j;Wxeys(Iq[Fze/Fw" variableType="">으하</field>
-        <value name="VALUE">
-            <block type="text" id="L2QOeoNEPLyBpdv8zfrl">
-                <field name="TEXT">Hello</field>
-            </block>
-        </value>
-        <next>
-            <block type="text_print" id="e^9Dd_y5[^xU49oawkZ#">
-                <value name="TEXT">
-                    <block type="variables_get" id="t1@JQI~+9W;,4_9q-JJ4">
-                        <field name="VAR" id="^{{j;Wxeys(Iq[Fze/Fw" variableType="">으하</field>
-                    </block>
-                </value>
-            </block>
-        </next>
-    </block>
+    <variables />
 </xml>
