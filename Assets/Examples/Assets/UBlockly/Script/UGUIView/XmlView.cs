@@ -78,12 +78,13 @@ namespace UBlockly.UGUI
             });
             
             */
+            /*
             m_LoadBtn.onClick.AddListener(() =>
             {
                 if (!mIsLoadPanelShow) ShowLoadPanel();
                 else HideLoadPanel();
             });
-            
+            */
             //m_SaveOkBtn.onClick.AddListener(SaveXml);
         }
 
@@ -97,6 +98,7 @@ namespace UBlockly.UGUI
         {
             m_SavePanel.SetActive(false);
         }
+        /*
         protected virtual void ShowLoadPanel()
         {
             m_LoadPanel.SetActive(true);
@@ -116,6 +118,7 @@ namespace UBlockly.UGUI
                 }
             }
         }
+        */
 
 
         protected virtual void HideLoadPanel()
@@ -165,31 +168,35 @@ namespace UBlockly.UGUI
         }
 
 
-        protected virtual void LoadXml(string fileName)
+        public TextAsset[] xmlFiles; // Inspector에서 할당할 XML 파일들
+
+        protected virtual void LoadXml()
         {
-            StartCoroutine(AsyncLoadXml(fileName));
+            int index = MoveBlockCoding.countNum;
+            if (xmlFiles != null && index >= 0 && index < xmlFiles.Length)
+            {
+                StartCoroutine(AsyncLoadXml(xmlFiles[index]));
+            }
         }
 
-        IEnumerator AsyncLoadXml(string fileName)
+        IEnumerator AsyncLoadXml(TextAsset xmlData)
         {
             BlocklyUI.WorkspaceView.CleanViews();
 
-            string resourceFilePath = GetResourcePath(fileName);
-
-            TextAsset textAsset = Resources.Load<TextAsset>(resourceFilePath);
-
-            if (textAsset == null)
+            if (xmlData == null)
             {
                 Debug.Log("파일을 찾을 수 없습니다.");
                 yield break;
             }
 
-            var dom = UBlockly.Xml.TextToDom(textAsset.text);
+            var dom = UBlockly.Xml.TextToDom(xmlData.text);
 
             UBlockly.Xml.DomToWorkspace(dom, BlocklyUI.WorkspaceView.Workspace);
+
             BlocklyUI.WorkspaceView.BuildViews();
 
             HideLoadPanel();
         }
+
     }
 }
