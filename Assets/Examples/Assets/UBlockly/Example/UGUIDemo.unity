@@ -244,6 +244,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114706578974249498, guid: 30bdd5fddc725438796726c39f29cd83,
+        type: 3}
+      propertyPath: xmlFiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706578974249498, guid: 30bdd5fddc725438796726c39f29cd83,
+        type: 3}
+      propertyPath: 'xmlFiles.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4900000, guid: 890f2cf8902e5fb4b8d9c0aab37b7f14, type: 3}
+    - target: {fileID: 114706578974249498, guid: 30bdd5fddc725438796726c39f29cd83,
+        type: 3}
+      propertyPath: 'xmlFiles.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4900000, guid: 6e33377b158db524d9e7ebd39cd1b622, type: 3}
     - target: {fileID: 114737297302446704, guid: 30bdd5fddc725438796726c39f29cd83,
         type: 3}
       propertyPath: m_ChildControlWidth

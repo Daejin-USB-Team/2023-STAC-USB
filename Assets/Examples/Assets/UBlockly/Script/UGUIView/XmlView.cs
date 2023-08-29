@@ -53,21 +53,21 @@ namespace UBlockly.UGUI
             get { return m_LoadPanel.activeInHierarchy; }
         }
         
-    protected string mSavePath;
-        // Resources 폴더 경로
-    private const string ResourcePath = "XmlSave";
-       // Resources 폴더에 저장된 파일 경로 가져오기
-    private string GetResourcePath(string fileName)
-    {
-        return Path.Combine(ResourcePath, fileName);
-    }
-
-
+        protected string mSavePath;
+            // Resources 폴더 경로
+        private const string ResourcePath = "XmlSave";
+           // Resources 폴더에 저장된 파일 경로 가져오기
+        private string GetResourcePath(string fileName)
+        {
+            return Path.Combine(ResourcePath, fileName);
+        }
         private void Awake()
         {
+            //LoadXml();
             HideSavePanel();
             HideLoadPanel();
             m_SaveBtn.onClick.AddListener(SaveXml);
+            m_LoadBtn.onClick.AddListener(LoadXml);
             /*
             m_SaveBtn.onClick.AddListener(() =>
             {
@@ -98,12 +98,12 @@ namespace UBlockly.UGUI
         {
             m_SavePanel.SetActive(false);
         }
-        /*
+        
         protected virtual void ShowLoadPanel()
         {
             m_LoadPanel.SetActive(true);
             m_SavePanel.SetActive(false);
-
+            /*
             TextAsset[] xmlFiles = Resources.LoadAll<TextAsset>(ResourcePath);
             for (int i = 0; i < xmlFiles.Length; i++)
             {
@@ -114,11 +114,12 @@ namespace UBlockly.UGUI
                     btnXml.SetActive(true);
                     btnXml.GetComponentInChildren<Text>().text = fileName;
                     string tempFileName = fileName; // 클로저 문제 해결을 위해 임시 변수에 할당
-                    btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml(tempFileName));
+                    btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml());
                 }
             }
+            */
         }
-        */
+        
 
 
         protected virtual void HideLoadPanel()
@@ -172,11 +173,26 @@ namespace UBlockly.UGUI
 
         protected virtual void LoadXml()
         {
+            //TextAsset[] xmlFiles = Resources.LoadAll<TextAsset>(ResourcePath);
+            for (int i = 0; i < xmlFiles.Length; i++)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(xmlFiles[i].name);
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    GameObject btnXml = GameObject.Instantiate(m_XmlBtnPrefab, m_ScrollContent, false);
+                    btnXml.SetActive(true);
+                    btnXml.GetComponentInChildren<Text>().text = fileName;
+                    string tempFileName = fileName; // 클로저 문제 해결을 위해 임시 변수에 할당
+                    //btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml());
+                }
+            }
             int index = MoveBlockCoding.countNum;
+            Debug.Log(index);
             if (xmlFiles != null && index >= 0 && index < xmlFiles.Length)
             {
                 StartCoroutine(AsyncLoadXml(xmlFiles[index]));
             }
+
         }
 
         IEnumerator AsyncLoadXml(TextAsset xmlData)
@@ -195,7 +211,7 @@ namespace UBlockly.UGUI
 
             BlocklyUI.WorkspaceView.BuildViews();
 
-            HideLoadPanel();
+            //HideLoadPanel();
         }
 
     }
