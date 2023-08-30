@@ -73,17 +73,19 @@ public class OutputScript : MonoBehaviour
 
             variableSets.Add(variableId, variableValue);
         }
-
+        
         // 변수 설정 블록에서 사용된 변수 id와 값을 출력
         foreach (KeyValuePair<string, string> variableSet in variableSets)
         {
             Debug.Log("Used variable id: " + variableSet.Key + ", value: " + variableSet.Value);
         }
+        
 
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
+

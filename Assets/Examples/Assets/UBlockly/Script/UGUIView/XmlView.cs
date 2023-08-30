@@ -53,21 +53,21 @@ namespace UBlockly.UGUI
             get { return m_LoadPanel.activeInHierarchy; }
         }
         
-    protected string mSavePath;
-        // Resources 폴더 경로
-    private const string ResourcePath = "XmlSave";
-       // Resources 폴더에 저장된 파일 경로 가져오기
-    private string GetResourcePath(string fileName)
-    {
-        return Path.Combine(ResourcePath, fileName);
-    }
-
-
+        protected string mSavePath;
+            // Resources 폴더 경로
+        private const string ResourcePath = "XmlSave";
+           // Resources 폴더에 저장된 파일 경로 가져오기
+        private string GetResourcePath(string fileName)
+        {
+            return Path.Combine(ResourcePath, fileName);
+        }
         private void Awake()
         {
+            //LoadXml();
             HideSavePanel();
             HideLoadPanel();
             m_SaveBtn.onClick.AddListener(SaveXml);
+            m_LoadBtn.onClick.AddListener(LoadXml);
             /*
             m_SaveBtn.onClick.AddListener(() =>
             {
@@ -78,12 +78,13 @@ namespace UBlockly.UGUI
             });
             
             */
+            /*
             m_LoadBtn.onClick.AddListener(() =>
             {
                 if (!mIsLoadPanelShow) ShowLoadPanel();
                 else HideLoadPanel();
             });
-            
+            */
             //m_SaveOkBtn.onClick.AddListener(SaveXml);
         }
 
@@ -97,11 +98,12 @@ namespace UBlockly.UGUI
         {
             m_SavePanel.SetActive(false);
         }
+        
         protected virtual void ShowLoadPanel()
         {
             m_LoadPanel.SetActive(true);
             m_SavePanel.SetActive(false);
-
+            /*
             TextAsset[] xmlFiles = Resources.LoadAll<TextAsset>(ResourcePath);
             for (int i = 0; i < xmlFiles.Length; i++)
             {
@@ -112,10 +114,12 @@ namespace UBlockly.UGUI
                     btnXml.SetActive(true);
                     btnXml.GetComponentInChildren<Text>().text = fileName;
                     string tempFileName = fileName; // 클로저 문제 해결을 위해 임시 변수에 할당
-                    btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml(tempFileName));
+                    btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml());
                 }
             }
+            */
         }
+        
 
 
         protected virtual void HideLoadPanel()
@@ -165,31 +169,50 @@ namespace UBlockly.UGUI
         }
 
 
-        protected virtual void LoadXml(string fileName)
+        public TextAsset[] xmlFiles; // Inspector에서 할당할 XML 파일들
+
+        protected virtual void LoadXml()
         {
-            StartCoroutine(AsyncLoadXml(fileName));
+            //TextAsset[] xmlFiles = Resources.LoadAll<TextAsset>(ResourcePath);
+            for (int i = 0; i < xmlFiles.Length; i++)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(xmlFiles[i].name);
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    GameObject btnXml = GameObject.Instantiate(m_XmlBtnPrefab, m_ScrollContent, false);
+                    btnXml.SetActive(true);
+                    btnXml.GetComponentInChildren<Text>().text = fileName;
+                    string tempFileName = fileName; // 클로저 문제 해결을 위해 임시 변수에 할당
+                    //btnXml.GetComponent<Button>().onClick.AddListener(() => LoadXml());
+                }
+            }
+            int index = MoveBlockCoding.countNum;
+            Debug.Log(index);
+            if (xmlFiles != null && index >= 0 && index < xmlFiles.Length)
+            {
+                StartCoroutine(AsyncLoadXml(xmlFiles[index]));
+            }
+
         }
 
-        IEnumerator AsyncLoadXml(string fileName)
+        IEnumerator AsyncLoadXml(TextAsset xmlData)
         {
             BlocklyUI.WorkspaceView.CleanViews();
 
-            string resourceFilePath = GetResourcePath(fileName);
-
-            TextAsset textAsset = Resources.Load<TextAsset>(resourceFilePath);
-
-            if (textAsset == null)
+            if (xmlData == null)
             {
                 Debug.Log("파일을 찾을 수 없습니다.");
                 yield break;
             }
 
-            var dom = UBlockly.Xml.TextToDom(textAsset.text);
+            var dom = UBlockly.Xml.TextToDom(xmlData.text);
 
             UBlockly.Xml.DomToWorkspace(dom, BlocklyUI.WorkspaceView.Workspace);
+
             BlocklyUI.WorkspaceView.BuildViews();
 
-            HideLoadPanel();
+            //HideLoadPanel();
         }
+
     }
 }

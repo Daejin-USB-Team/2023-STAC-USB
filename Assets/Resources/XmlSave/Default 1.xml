@@ -19,16 +19,6 @@
                         <field name="NUM">5</field>
                     </block>
                 </value>
-                <next>
-                    <block type="variables_set" id="gKqwAUc]Gq-OTUp}?WWS">
-                        <field name="VAR" id="~!L#^TBF1PlaKCkj1%XM" variableType="">물</field>
-                        <value name="VALUE">
-                            <block type="math_number" id="Tq|rX,QBqJ@mxEw!P8u@">
-                                <field name="NUM">9</field>
-                            </block>
-                        </value>
-                    </block>
-                </next>
             </block>
         </next>
     </block>
