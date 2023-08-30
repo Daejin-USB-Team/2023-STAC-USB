@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class back_button : MonoBehaviour
 {
     /// <summary>
-    /// 오호 지리네 ㅇㅇㅇ
+    /// 오호 지리네 ㅇㅇ
+    /// 비공개하며ㅑㄴ돈낸야함 ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
     /// </summary>
     public void SceneChange()
     {
