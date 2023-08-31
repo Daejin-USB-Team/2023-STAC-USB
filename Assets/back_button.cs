@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class back_button : MonoBehaviour
 {
+
     public void SceneChange()
     {
         SceneManager.LoadScene("camp");
