@@ -26,6 +26,19 @@ public class Tile : MonoBehaviour
 		// 원래 TileWall의 색상
 		spriteRenderer.color = new Color(0, 0.69f, 0.31f);
 	}
+	public void OnClick()
+	{
+		/*
+		if (GetMouseClickDown == 0 )
+		{
+
+		}
+		else
+		{
+
+		}
+		*/
+	}
 }
 
 

@@ -8,7 +8,7 @@ using UBlockly;  // DataStruct를 인식할 수 있도록 UBlockly를 추가합니다.
 public class OutputScript : MonoBehaviour
 {
     private string xmlPath = "XmlSave/Default";
-    public TextMeshProUGUI outputText;
+    public static TextMeshProUGUI outputText;
     public void ReceiveInputFromTextPrintCmdtor(DataStruct inputData)
     {
         string receivedDataString = inputData.ToString();
