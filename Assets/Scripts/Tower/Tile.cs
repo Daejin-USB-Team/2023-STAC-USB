@@ -31,7 +31,8 @@ public class Tile : MonoBehaviour
 
 	public void OnClick()
 	{
-		if (GetMouseClickDown == 0)
+		/*
+		if (GetMouseClickDown == 0 )
 		{
 
 		}
@@ -39,6 +40,7 @@ public class Tile : MonoBehaviour
 		{
 
 		}
+		*/
 	}
 }
 
