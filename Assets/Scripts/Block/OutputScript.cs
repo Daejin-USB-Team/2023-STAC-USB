@@ -5,19 +5,54 @@ using System.Xml;
 using UnityEngine.UI;
 using TMPro;
 using UBlockly;  // DataStruct를 인식할 수 있도록 UBlockly를 추가합니다.
+using UnityEngine.SceneManagement;
 public class OutputScript : MonoBehaviour
 {
+    public GameObject panel1;
     private string xmlPath = "XmlSave/Default";
     public static TextMeshProUGUI outputText;
+    private Buff buff;
+    private string receivedDataString;
+    private int count;
+    private MoveBlockCoding moveBlockCoding;
+    private TowerWeapon towerWeapon;
+    
     public void ReceiveInputFromTextPrintCmdtor(DataStruct inputData)
     {
-        string receivedDataString = inputData.ToString();
+        receivedDataString = inputData.ToString();
         Debug.Log("다른 스크립트에서 전달 받은 input 값: " + inputData.ToString());
-        outputText.text = receivedDataString;
+        //outputText.text = receivedDataString; 
+        if (count == 0 && receivedDataString == "10")
+        {
+            MoveBlockCoding.countNum++;
+            outputText.text = "정답입니다";
+            Debug.Log("정답입니다아"); 
+            panel1.SetActive(false);
+        }
+        else if(count == 1 && receivedDataString == "11")
+        {
+            MoveBlockCoding.countNum++;
+
+        }
+        //가능하다면 고정형 튜토리얼 만들어보기
+        //문제 3개정도 더 만들기
+        //문제 출시버튼을 눌렀을때 어떤문제를 풀어야하는지 적어주기
+        //실행을 눌렀을때 정답 오답 처리 택스트 및 해당 씬 탈출
+        //버프 지급
+        else
+        {
+            outputText.text = "오답입니다";
+        }
     }
     // Start is called before the first frame update
     private void Start()
     {
+        moveBlockCoding = GetComponent<MoveBlockCoding>();
+        towerWeapon = GetComponent<TowerWeapon>();
+        count = MoveBlockCoding.countNum;
+        buff = GetComponent<Buff>();
+
+        GameManager.Instance.SetPreviousScene("InGame");
         // XML 파일 로드
         TextAsset xmlAsset = Resources.Load<TextAsset>(xmlPath);
         // XmlDocument 객체 생성
@@ -80,11 +115,6 @@ public class OutputScript : MonoBehaviour
             Debug.Log("Used variable id: " + variableSet.Key + ", value: " + variableSet.Value);
         }
         
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 }
