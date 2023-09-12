@@ -1,17 +1,9 @@
 <xml>
     <variables>
         <variable type="" id="sRE??h9*L|0*3CN6*Ype">돌</variable>
-        <variable type="" id="/B/wJv@`W5Sx,fS5W[J~">나무</variable>
-        <variable type="" id="~!L#^TBF1PlaKCkj1%XM">물</variable>
     </variables>
-    <block type="variables_set" id="7yF6s,v2G/lnBRnRam*X" x="30" y="-596">
-        <field name="VAR" id="sRE??h9*L|0*3CN6*Ype" variableType="">돌</field>
-    </block>
-    <block type="variables_get" id="HZKIOcETY)M4$^[q;3^s" x="366" y="-608">
-        <field name="VAR" id="sRE??h9*L|0*3CN6*Ype" variableType="">돌</field>
-    </block>
-    <block type="text_print" id="kf?.YD=6p4%sN3Rfu=3X" x="692" y="-618" />
-    <block type="math_number" id="x]|aniBg/3HY6]YP!x6)" x="495" y="-607">
-        <field name="NUM">10</field>
+    <block type="text_print" id="kf?.YD=6p4%sN3Rfu=3X" x="203" y="-277" />
+    <block type="math_number" id="x]|aniBg/3HY6]YP!x6)" x="206" y="-168">
+        <field name="NUM">1</field>
     </block>
 </xml>
