@@ -66,23 +66,19 @@ namespace UBlockly.UGUI
             //LoadXml();
             HideSavePanel();
             HideLoadPanel();
-            m_SaveBtn.onClick.AddListener(SaveXml);
             m_LoadBtn.onClick.AddListener(LoadXml);
+            m_SaveBtn.onClick.AddListener(SaveXml);
             /*
             m_SaveBtn.onClick.AddListener(() =>
             {
-                
-                if (!mIsSavePanelShow) ShowSavePanel();
-                else HideSavePanel();
-                
+                SaveXml();
             });
             
-            */
-            /*
+            
             m_LoadBtn.onClick.AddListener(() =>
             {
-                if (!mIsLoadPanelShow) ShowLoadPanel();
-                else HideLoadPanel();
+                ShowLoadPanel();
+                HideLoadPanel();
             });
             */
             //m_SaveOkBtn.onClick.AddListener(SaveXml);

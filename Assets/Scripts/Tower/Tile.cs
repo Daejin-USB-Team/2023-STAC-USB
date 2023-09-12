@@ -2,43 +2,31 @@
 
 public class Tile : MonoBehaviour
 {
-	private	SpriteRenderer	spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
-	// 타일에 타워가 건설되어 있는지 검사하는 변수
-	public bool IsBuildTower { set; get; }
+    // 타일에 타워가 건설되어 있는지 검사하는 변수
+    public bool IsBuildTower { set; get; }
 
-	private void Awake()
-	{
-		spriteRenderer = GetComponent<SpriteRenderer>();
-		OnColorReset();
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        OnColorReset();
 
-		IsBuildTower = false;
-	}
+        IsBuildTower = false;
+    }
 
-	public void OnSelectedTile()
-	{
-		// 현재 타일이 선택되었을 때 바뀌는 색상
-		spriteRenderer.color = Color.blue;
-	}
+    public void OnSelectedTile()
+    {
+        // 현재 타일이 선택되었을 때 바뀌는 색상
+        spriteRenderer.color = Color.blue;
+    }
 
-	public void OnColorReset()
-	{
-		// 원래 TileWall의 색상
-		spriteRenderer.color = new Color(0, 0.69f, 0.31f);
-	}
-	public void OnClick()
-	{
-		/*
-		if (GetMouseClickDown == 0 )
-		{
+    public void OnColorReset()
+    {
+        // 원래 TileWall의 색상
+        spriteRenderer.color = new Color(0, 0.69f, 0.31f);
+    }
 
-		}
-		else
-		{
-
-		}
-		*/
-	}
 }
 
 

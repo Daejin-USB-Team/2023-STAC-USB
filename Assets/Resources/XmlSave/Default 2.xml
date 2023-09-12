@@ -1,25 +1,39 @@
 <xml>
-    <variables>
-        <variable type="" id="sRE??h9*L|0*3CN6*Ype">돌</variable>
-        <variable type="" id="/B/wJv@`W5Sx,fS5W[J~">나무</variable>
-        <variable type="" id="~!L#^TBF1PlaKCkj1%XM">물</variable>
-    </variables>
-    <block type="variables_set" id="7yF6s,v2G/lnBRnRam*X" x="272" y="-236">
-        <field name="VAR" id="sRE??h9*L|0*3CN6*Ype" variableType="">돌</field>
-        <value name="VALUE">
-            <block type="math_number" id="x]|aniBg/3HY6]YP!x6)">
-                <field name="NUM">10</field>
-            </block>
-        </value>
-        <next>
-            <block type="variables_set" id="xt74+AG3WXO%5i[4S^i1">
-                <field name="VAR" id="/B/wJv@`W5Sx,fS5W[J~" variableType="">나무</field>
-                <value name="VALUE">
-                    <block type="math_number" id="7]5hR$$EDp^*XHd,6,aJ">
-                        <field name="NUM">5</field>
-                    </block>
-                </value>
-            </block>
-        </next>
-    </block>
+  <variables>
+    <variable type="" id="bU2b!;c,Sw[]eRzmd0[D">나무</variable>
+    <variable type="" id="O:x4Gj;!GB)bVNwN]H-p">돌</variable>
+    <variable type="" id="}*Z|(Q@=9rt:G*vx|~0`">석궁</variable>
+  </variables>
+  <block type="text_print" id="P}`6`%-gYl4yq%1Ybg2D" x="85" y="-494" />
+  <block type="variables_set" id="bi}bBw%eoD;U1,a^g^ld" x="89" y="-339">
+    <field name="VAR" id="}*Z|(Q@=9rt:G*vx|~0`" variableType="">석궁</field>
+  </block>
+  <block type="math_arithmetic" id="X!};F(PtW8W`atbe]SiL" x="479" y="-282">
+    <field name="OP">ADD</field>
+    <value name="A">
+      <block type="variables_get" id="+t]^]FzNmaXGbcR!HD4L">
+        <field name="VAR" id="O:x4Gj;!GB)bVNwN]H-p" variableType="">돌</field>
+      </block>
+    </value>
+    <value name="B">
+      <block type="variables_get" id="j9U0Nfo`}$vb:l9@4RN{">
+        <field name="VAR" id="bU2b!;c,Sw[]eRzmd0[D" variableType="">나무</field>
+      </block>
+    </value>
+  </block>
+  <block type="variables_set" id="];09k0b;=O$([nh~:k,j" x="93" y="-189">
+    <field name="VAR" id="O:x4Gj;!GB)bVNwN]H-p" variableType="">돌</field>
+  </block>
+  <block type="math_number" id="5_GwYDG{EF,6m1Rc;{*k" x="479" y="-191">
+    <field name="NUM">1</field>
+  </block>
+  <block type="math_number" id="%cV[;B]SGe-?pt94RKAl" x="475" y="-120">
+    <field name="NUM">1</field>
+  </block>
+  <block type="variables_set" id="A9ZD+IgVet:`c4nU;?+I" x="97" y="-30">
+    <field name="VAR" id="bU2b!;c,Sw[]eRzmd0[D" variableType="">나무</field>
+  </block>
+  <block type="variables_get" id="Th?7*q2_v%S.vYDlO(!x" x="480" y="-28">
+    <field name="VAR" id="}*Z|(Q@=9rt:G*vx|~0`" variableType="">석궁</field>
+  </block>
 </xml>
