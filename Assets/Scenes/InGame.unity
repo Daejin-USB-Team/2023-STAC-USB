@@ -12493,8 +12493,9 @@ GameObject:
   - component: {fileID: 1266992433}
   - component: {fileID: 1266992431}
   - component: {fileID: 1266992430}
+  - component: {fileID: 1266992434}
   m_Layer: 5
-  m_Name: SpeedButton
+  m_Name: SpeedUpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12602,9 +12603,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Time_Speed, Assembly-CSharp
-        m_MethodName: OnMouseUp
+      - m_Target: {fileID: 1266992434}
+        m_TargetAssemblyTypeName: SpeedUpButton, Assembly-CSharp
+        m_MethodName: ToggleSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12614,6 +12615,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1266992434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266992424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945f6f1785d3d6b4e97afb87afb30b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1272584741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18983,8 +18996,9 @@ GameObject:
   - component: {fileID: 1941202365}
   - component: {fileID: 1941202363}
   - component: {fileID: 1941202362}
+  - component: {fileID: 1941202366}
   m_Layer: 5
-  m_Name: StopButton
+  m_Name: PauseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19092,9 +19106,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1883651204}
-        m_TargetAssemblyTypeName: Time_Stop, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 1941202366}
+        m_TargetAssemblyTypeName: PauseButton, Assembly-CSharp
+        m_MethodName: TogglePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19103,7 +19117,20 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
+--- !u!114 &1941202366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941202356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfff0c30683f83740af947e07a4d7558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 0}
 --- !u!1001 &1942323802
 PrefabInstance:
   m_ObjectHideFlags: 0
