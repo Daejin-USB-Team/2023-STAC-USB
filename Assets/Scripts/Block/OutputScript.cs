@@ -16,7 +16,6 @@ public class OutputScript : MonoBehaviour
     private string receivedDataString;
     private int count;
     private MoveBlockCoding moveBlockCoding;
-    private TowerWeapon towerWeapon;
     
     public void ReceiveInputFromTextPrintCmdtor(DataStruct inputData)
     {
@@ -32,6 +31,7 @@ public class OutputScript : MonoBehaviour
         
         if (count == 0 && receivedDataString == "1")
         {
+            buff.TakeBuff();
             MoveBlockCoding.countNum++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
@@ -41,6 +41,7 @@ public class OutputScript : MonoBehaviour
         }
         else if(count == 1 && receivedDataString == "10")
         {
+            buff.TakeBuff();
             MoveBlockCoding.countNum++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
@@ -50,6 +51,7 @@ public class OutputScript : MonoBehaviour
         }
         else if (count == 2 && receivedDataString == "2")
         {
+            buff.TakeBuff();
             MoveBlockCoding.countNum++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
@@ -59,6 +61,7 @@ public class OutputScript : MonoBehaviour
         }
         else
         {
+            buff.TakeBuff();
             outputText.text = "오답입니다";
             BlocklyUI.WorkspaceView.CleanViews();
             Invoke("Setfalse", 3f);
@@ -93,7 +96,6 @@ public class OutputScript : MonoBehaviour
     {
         SetText();
         moveBlockCoding = GetComponent<MoveBlockCoding>();
-        towerWeapon = GetComponent<TowerWeapon>();
         count = MoveBlockCoding.countNum;
         buff = GetComponent<Buff>();
 
