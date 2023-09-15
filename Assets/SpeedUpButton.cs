@@ -1,44 +1,52 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeedUpButton : MonoBehaviour
+public class ImageAndSpeedSwitcher : MonoBehaviour
 {
-    private bool isSpeedingUp = false;
+    public Image image;
+    public Sprite spritea;
+    public Sprite spriteb;
+    private bool isSprite1 = true;
+    private bool isFastForward = false;
 
     private void Start()
     {
-        // 초기 버튼 텍스트 설정
-        UpdateButtonText();
+        // 이미지 컴포넌트 가져오기
+        image = GameObject.Find("Image").GetComponent<Image>();
+
+        // 초기 이미지 설정
+        image.sprite = spritea;
     }
 
-    public void ToggleSpeed()
+    public void OnButtonClick()
     {
-        isSpeedingUp = !isSpeedingUp;
-
-        if (isSpeedingUp)
+        // 이미지 변경
+        if (isSprite1)
         {
-            Time.timeScale = 2f; // 게임 진행 속도 2배
+            image.sprite = spriteb;
         }
         else
         {
-            Time.timeScale = 1f; // 기본 게임 진행 속도
+            image.sprite = spritea;
         }
 
-        // 버튼 텍스트 업데이트
-        UpdateButtonText();
+        // 게임 속도 변경
+        isSprite1 = !isSprite1;
+        ToggleGameSpeed();
     }
 
-    private void UpdateButtonText()
+    private void ToggleGameSpeed()
     {
-        Text buttonText = GetComponentInChildren<Text>();
-
-        if (isSpeedingUp)
+        // 게임 속도 변경 (2배속 토글)
+        if (!isFastForward)
         {
-            buttonText.text = "1배 속도";
+            Time.timeScale = 2f; // 2배속
         }
         else
         {
-            buttonText.text = "2배 속도";
+            Time.timeScale = 1f; // 원래 속도
         }
+
+        isFastForward = !isFastForward;
     }
 }
