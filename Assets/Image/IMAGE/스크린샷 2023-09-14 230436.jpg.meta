@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e2b2b09ed2cb01b4b95abddde3fc8502
+guid: 4fb3cf38a68eaa14fa4986a5b8667f58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2739807658926110822
-    second: Skull_0
+      213: 7863130496926529156
+    second: "\uC2A4\uD06C\uB9B0\uC0F7 2023-09-14 230436_0"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -94,8 +94,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< Updated upstream
-=======
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -108,18 +106,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skull_0
+      name: "\uC2A4\uD06C\uB9B0\uC0F7 2023-09-14 230436_0"
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 24
-        height: 23
+        x: 0
+        y: 0
+        width: 522
+        height: 517
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9780d8437f3af9d0800000000000000
-      internalID: -2739807658926110822
+      spriteID: 486b8dbb6837f1d60800000000000000
+      internalID: 7863130496926529156
       vertices: []
       indices: 
       edges: []
@@ -143,12 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< Updated upstream
-    nameFileIdTable: {}
-=======
     nameFileIdTable:
-      Skull_0: -2739807658926110822
->>>>>>> Stashed changes
+      "\uC2A4\uD06C\uB9B0\uC0F7 2023-09-14 230436_0": 7863130496926529156
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

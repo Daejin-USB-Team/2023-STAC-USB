@@ -20,10 +20,30 @@ public class Tile : MonoBehaviour
         IsBuildTower = false;
         originalPosition = transform.position;
 
+<<<<<<< Updated upstream
         // 버튼 클릭 이벤트에 함수 연결
         tileButton.onClick.AddListener(OnTileButtonClick);
     }
 
+=======
+<<<<<<< HEAD
+	public void OnSelectedTile()
+	{
+		// 현재 타일이 선택되었을 때 바뀌는 색상
+		//spriteRenderer.color = Color.blue;
+	}
+
+	public void OnColorReset()
+	{
+		// 원래 TileWall의 색상
+		//spriteRenderer.color = new Color(0, 0.69f, 0.31f);
+	}
+=======
+        // 버튼 클릭 이벤트에 함수 연결
+        tileButton.onClick.AddListener(OnTileButtonClick);
+    }
+
+>>>>>>> Stashed changes
     // UI 버튼 클릭 시 호출되는 함수
     private void OnTileButtonClick()
     {
@@ -47,4 +67,8 @@ public class Tile : MonoBehaviour
         // 원래 TileWall의 색상
         spriteRenderer.color = new Color(0, 0.69f, 0.31f);
     }
+<<<<<<< Updated upstream
+=======
+>>>>>>> e46f4ddccbc374346f188a04d9f023e9c224c914
+>>>>>>> Stashed changes
 }
