@@ -7,23 +7,28 @@ public class tutorial : MonoBehaviour
     public GameObject[] ttPanel;
     public int numPanel = 0;
 
-    private int count; 
-    
-    private void Start()
+    private int count;
+    void Awake()
     {
         count = MoveBlockCoding.countNum;
+        if (count == 0)
+        {
+            for (int i = 0; i < ttPanel.Length; i++)
+                ttPanel[i].SetActive(false);
+            ttPanel[0].SetActive(true);
+        }
+
     }
     void Update()
     {
         if(count == 0)
         {
-            for(int i  = 0;i<ttPanel.Length;i++)
-                ttPanel[i].SetActive(true);
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            ttPanel[numPanel].SetActive(false);
-            numPanel++;
+            if (Input.GetMouseButtonDown(0))
+            {
+                ttPanel[numPanel].SetActive(false);
+                numPanel++;
+                ttPanel[numPanel].SetActive(true);
+            }
         }
     }
 }

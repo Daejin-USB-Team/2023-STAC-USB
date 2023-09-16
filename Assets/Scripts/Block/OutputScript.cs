@@ -29,7 +29,7 @@ public class OutputScript : MonoBehaviour
             //버프 지급
             buff.TakeBuff();
             //다음 문제 카운트
-            MoveBlockCoding.countNum++;
+            MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
             //문제 결과 택스트 출력
             outputText.text = "정답입니다";
@@ -40,7 +40,7 @@ public class OutputScript : MonoBehaviour
         else if(count == 1 && receivedDataString == "10")
         {
             buff.TakeBuff();
-            MoveBlockCoding.countNum++;
+            MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
@@ -50,7 +50,7 @@ public class OutputScript : MonoBehaviour
         else if (count == 2 && receivedDataString == "2")
         {
             buff.TakeBuff();
-            MoveBlockCoding.countNum++;
+            MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
@@ -63,6 +63,7 @@ public class OutputScript : MonoBehaviour
             outputText.text = "오답입니다";
             BlocklyUI.WorkspaceView.CleanViews();
             Invoke("Setfalse", 3f);
+            Invoke("SetText", 4f);
         }
     }
 
@@ -86,7 +87,7 @@ public class OutputScript : MonoBehaviour
         }
         else if (MoveBlockCoding.countNum == 2)
         {
-            outputText.text = "1.돌과 나무를 각각 1로 설정해주세요\n2.석궁에 돌과 나무를 더해주세요\n3.석궁을 출력해주세요.";
+            outputText.text = "1.벽돌과 나무를 1로 설정해주세요\n2.석궁에 벽돌과 나무를 더해주세요\n3.석궁을 출력해주세요.";
         }
     }
     // Start is called before the first frame update
