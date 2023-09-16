@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: CuteRPG_Lava_Caves_5
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -54346456, guid: 76cf0f181cfb9e845b1060293739677f, type: 3}
+  m_Sprite: {fileID: 669666838, guid: 76cf0f181cfb9e845b1060293739677f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
