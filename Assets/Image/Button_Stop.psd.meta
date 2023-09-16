@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c551cb7fc5e651640a0dece9b5376917
+guid: c65a47724563db941ba9b51e86e38ae2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3812099327595673937
-    second: "\uC124\uC815\uD328\uB110-1_0"
+      213: 7651187847127740482
+    second: Button_Stop_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -94,41 +94,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uC124\uC815\uD328\uB110-1_0"
+      name: Button_Stop_0
       rect:
         serializedVersion: 2
-        x: 649
-        y: 199
-        width: 802
-        height: 721
+        x: 3
+        y: 1
+        width: 34
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa68722ebd3b81bc0800000000000000
-      internalID: -3812099327595673937
+      spriteID: 240b5d92fca7e2a60800000000000000
+      internalID: 7651187847127740482
       vertices: []
       indices: 
       edges: []
@@ -152,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      "\uC124\uC815\uD328\uB110-1_0": -3812099327595673937
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
