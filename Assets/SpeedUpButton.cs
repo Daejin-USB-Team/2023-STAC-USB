@@ -1,44 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeedUpButton : MonoBehaviour
+public class SpeedControl : MonoBehaviour
 {
-    private bool isSpeedingUp = false;
+    public Sprite normalImage;
+    public Sprite doubledImage;
+    public Text speedText;
+
+    private bool isDoubled = false;
 
     private void Start()
     {
-        // 초기 버튼 텍스트 설정
-        UpdateButtonText();
+        // 초기 이미지 설정
+        UpdateImage();
     }
 
     public void ToggleSpeed()
     {
-        isSpeedingUp = !isSpeedingUp;
+        // 2배속 토글
+        isDoubled = !isDoubled;
 
-        if (isSpeedingUp)
+        // 이미지 업데이트
+        UpdateImage();
+
+        // 속도 업데이트
+        if (isDoubled)
         {
-            Time.timeScale = 2f; // 게임 진행 속도 2배
+            Time.timeScale = 2f; // 2배속으로 설정
+            speedText.text = "2x Speed";
         }
         else
         {
-            Time.timeScale = 1f; // 기본 게임 진행 속도
+            Time.timeScale = 1f; // 정상 속도로 설정
+            speedText.text = "1x Speed";
         }
-
-        // 버튼 텍스트 업데이트
-        UpdateButtonText();
     }
 
-    private void UpdateButtonText()
+    private void UpdateImage()
     {
-        Text buttonText = GetComponentInChildren<Text>();
-
-        if (isSpeedingUp)
+        // 이미지 업데이트
+        Image image = GetComponent<Image>();
+        if (image != null)
         {
-            buttonText.text = "1배 속도";
-        }
-        else
-        {
-            buttonText.text = "2배 속도";
+            image.sprite = isDoubled ? doubledImage : normalImage;
         }
     }
 }
