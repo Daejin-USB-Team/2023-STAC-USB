@@ -1,57 +1,46 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class Tile : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public GameObject PanelBuildTower; // 활성화할 프리팹
-    private Vector3 originalPosition; // 타일의 원래 위치
-    private GameObject activeTower; // 활성화된 타워
-    public Button tileButton; // UI 버튼
-
-    // 타일에 타워가 건설되어 있는지 검사하는 변수
     public bool IsBuildTower { set; get; }
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //OnColorReset();
+        OnColorReset();
 
         IsBuildTower = false;
-        originalPosition = transform.position;
-        // 버튼 클릭 이벤트에 함수 연결
-        tileButton.onClick.AddListener(OnTileButtonClick);
     }
-	public void OnSelectedTile()
-	{
-		// 현재 타일이 선택되었을 때 바뀌는 색상
-		//spriteRenderer.color = Color.blue;
-	}
 
-	public void OnColorReset()
-	{
-		// 원래 TileWall의 색상
-		//spriteRenderer.color = new Color(0, 0.69f, 0.31f);
-	}
-
-    
-
-    // UI 버튼 클릭 시 호출되는 함수
-    private void OnTileButtonClick()
+    private void Update()
     {
-        // 타일이 선택되었을 때 프리팹 활성화
-        if (!IsBuildTower && PanelBuildTower != null)
+        // 마우스 왼쪽 버튼 클릭을 감지
+        if (Input.GetMouseButtonDown(0))
         {
-            // 프리팹을 활성화하고 위치를 변경합니다.
-            if (activeTower != null)
+            // 클릭된 위치의 collider를 검출
+            Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D hitCollider = Physics2D.OverlapPoint(clickPosition);
+
+            if (hitCollider != null && hitCollider.gameObject == gameObject)
             {
-                Destroy(activeTower);
+                // 현재 타일이 선택되었을 때 바뀌는 색상
+                //spriteRenderer.color = Color.blue;
+
+                // 클릭 시 프리팹 소환
+                Vector3 spawnPosition = transform.position; // 타일의 위치로 프리팹을 소환
+                GameObject prefabToSpawn = Resources.Load<GameObject>("PanelBuildTower"); // Resources 폴더에 있는 프리팹 이름 설정
+                Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
             }
-
-            activeTower = Instantiate(PanelBuildTower, originalPosition, Quaternion.identity);
-            // 여기에서 새로 생성된 타워의 위치와 로직을 설정할 수 있습니다.
         }
-        spriteRenderer.color = Color.blue;
     }
+    public void OnSelectedTile()
+    {
 
+    }
+     public void OnColorReset()
+    {
+        // 원래 TileWall의 색상
+        //spriteRenderer.color = new Color(0, 0.69f, 0.31f);
+    }
 }

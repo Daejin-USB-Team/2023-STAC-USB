@@ -1,40 +1,52 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseButton : MonoBehaviour
+public class StopButton : MonoBehaviour
 {
-    public Text buttonText;
-    public GameObject pausePrefab; // 프리팹을 할당할 변수
-    private bool isPaused = false;
+    public GameObject pausePanel; // 일시 정지 패널 오브젝트
+
+    private bool isPaused = false; // 게임 일시 정지 여부
 
     private void Start()
     {
-        buttonText.text = "일시정지"; // 초기 버튼 텍스트 설정
+        // 게임 시작 시 일시 정지 패널을 비활성화
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        // 게임 일시 정지 토글
+        if (Input.GetKeyDown(KeyCode.Escape)) // ESC 키를 누르면 일시 정지 토글
+        {
+            TogglePause();
+        }
     }
 
     public void TogglePause()
     {
+        // 게임 일시 정지 상태 토글
         isPaused = !isPaused;
+
         if (isPaused)
         {
-            Time.timeScale = 0f; // 게임 일시 정지
-            buttonText.text = "재개";
-            ActivatePausePrefab(true); // 프리팹 활성화
+            // 게임 일시 정지 상태일 때
+            Time.timeScale = 0f; // 게임 시간을 멈춤
+            if (pausePanel != null)
+            {
+                pausePanel.SetActive(true); // 일시 정지 패널 활성화
+            }
         }
         else
         {
-            Time.timeScale = 1f; // 게임 재개
-            buttonText.text = "일시정지";
-            ActivatePausePrefab(false); // 프리팹 비활성화
-        }
-    }
-
-    // 프리팹을 활성화 또는 비활성화하는 메서드
-    private void ActivatePausePrefab(bool activate)
-    {
-        if (pausePrefab != null)
-        {
-            pausePrefab.SetActive(activate);
+            // 게임 일시 정지 상태가 아닐 때
+            Time.timeScale = 1f; // 정상적인 게임 속도로 복원
+            if (pausePanel != null)
+            {
+                pausePanel.SetActive(false); // 일시 정지 패널 비활성화
+            }
         }
     }
 }

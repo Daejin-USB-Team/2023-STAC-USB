@@ -1,52 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageAndSpeedSwitcher : MonoBehaviour
+public class SpeedControl : MonoBehaviour
 {
-    public Image image;
-    public Sprite spritea;
-    public Sprite spriteb;
-    private bool isSprite1 = true;
-    private bool isFastForward = false;
+    public Sprite normalImage;
+    public Sprite doubledImage;
+    public Text speedText;
+
+    private bool isDoubled = false;
 
     private void Start()
     {
-        // 이미지 컴포넌트 가져오기
-        image = GameObject.Find("Image").GetComponent<Image>();
-
         // 초기 이미지 설정
-        image.sprite = spritea;
+        UpdateImage();
     }
 
-    public void OnButtonClick()
+    public void ToggleSpeed()
     {
-        // 이미지 변경
-        if (isSprite1)
+        // 2배속 토글
+        isDoubled = !isDoubled;
+
+        // 이미지 업데이트
+        UpdateImage();
+
+        // 속도 업데이트
+        if (isDoubled)
         {
-            image.sprite = spriteb;
+            Time.timeScale = 2f; // 2배속으로 설정
+            speedText.text = "2x Speed";
         }
         else
         {
-            image.sprite = spritea;
+            Time.timeScale = 1f; // 정상 속도로 설정
+            speedText.text = "1x Speed";
         }
-
-        // 게임 속도 변경
-        isSprite1 = !isSprite1;
-        ToggleGameSpeed();
     }
 
-    private void ToggleGameSpeed()
+    private void UpdateImage()
     {
-        // 게임 속도 변경 (2배속 토글)
-        if (!isFastForward)
+        // 이미지 업데이트
+        Image image = GetComponent<Image>();
+        if (image != null)
         {
-            Time.timeScale = 2f; // 2배속
+            image.sprite = isDoubled ? doubledImage : normalImage;
         }
-        else
-        {
-            Time.timeScale = 1f; // 원래 속도
-        }
-
-        isFastForward = !isFastForward;
     }
 }
