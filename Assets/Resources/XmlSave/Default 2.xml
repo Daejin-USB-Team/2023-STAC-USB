@@ -1,7 +1,7 @@
 <xml>
   <variables>
     <variable type="" id="bU2b!;c,Sw[]eRzmd0[D">나무</variable>
-    <variable type="" id="O:x4Gj;!GB)bVNwN]H-p">돌</variable>
+    <variable type="" id="O:x4Gj;!GB)bVNwN]H-p">벽돌</variable>
     <variable type="" id="}*Z|(Q@=9rt:G*vx|~0`">석궁</variable>
   </variables>
   <block type="text_print" id="P}`6`%-gYl4yq%1Ybg2D" x="85" y="-494" />
@@ -12,7 +12,7 @@
     <field name="OP">ADD</field>
     <value name="A">
       <block type="variables_get" id="+t]^]FzNmaXGbcR!HD4L">
-        <field name="VAR" id="O:x4Gj;!GB)bVNwN]H-p" variableType="">돌</field>
+        <field name="VAR" id="O:x4Gj;!GB)bVNwN]H-p" variableType="">벽돌</field>
       </block>
     </value>
     <value name="B">
@@ -22,7 +22,7 @@
     </value>
   </block>
   <block type="variables_set" id="];09k0b;=O$([nh~:k,j" x="93" y="-189">
-    <field name="VAR" id="O:x4Gj;!GB)bVNwN]H-p" variableType="">돌</field>
+    <field name="VAR" id="O:x4Gj;!GB)bVNwN]H-p" variableType="">벽돌</field>
   </block>
   <block type="math_number" id="5_GwYDG{EF,6m1Rc;{*k" x="479" y="-191">
     <field name="NUM">1</field>
