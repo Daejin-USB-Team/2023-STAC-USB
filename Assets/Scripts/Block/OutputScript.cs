@@ -16,7 +16,7 @@ public class OutputScript : MonoBehaviour
     private string receivedDataString;
     private int count;
     private MoveBlockCoding moveBlockCoding;
-    
+    private TimeStop timeStop;
     public void ReceiveInputFromTextPrintCmdtor(DataStruct inputData)
     {
         //코드 실행시 전달받는 값
@@ -26,6 +26,8 @@ public class OutputScript : MonoBehaviour
         //정답이 맞는지 체크하는 if문
         if (count == 0 && receivedDataString == "1")
         {
+            //게임 일시정지 해제
+            timeStop.isPaused = false;
             //버프 지급
             buff.TakeBuff();
             //다음 문제 카운트
@@ -34,36 +36,38 @@ public class OutputScript : MonoBehaviour
             //문제 결과 택스트 출력
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
-            Invoke("Setfalse", 3f);
-            Invoke("SetText",4f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText",2f);
         }
         else if(count == 1 && receivedDataString == "10")
         {
+            timeStop.isPaused = false;
             buff.TakeBuff();
             MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
-            Invoke("Setfalse", 3f);
-            Invoke("SetText", 4f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText", 2f);
         }
         else if (count == 2 && receivedDataString == "2")
         {
+            timeStop.isPaused = false;
             buff.TakeBuff();
             MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
-            Invoke("Setfalse", 3f);
-            Invoke("SetText", 4f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText", 2f);
         }
         else
         {
-            buff.TakeBuff();
+            timeStop.isPaused = false;
             outputText.text = "오답입니다";
             BlocklyUI.WorkspaceView.CleanViews();
-            Invoke("Setfalse", 3f);
-            Invoke("SetText", 4f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText", 2f);
         }
     }
 
@@ -93,10 +97,10 @@ public class OutputScript : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        SetText();
+        SetText(); 
+        timeStop = GetComponent<TimeStop>();
         count = MoveBlockCoding.countNum;
         buff = GetComponent<Buff>();
-
         // XML 파일 로드
         TextAsset xmlAsset = Resources.Load<TextAsset>(xmlPath);
         // XmlDocument 객체 생성
