@@ -15,7 +15,7 @@ public class TextTMPViewer : MonoBehaviour
     private void Update()
     {
         textWave.text       = waveSystem.CurrentWave + "/" + waveSystem.MaxWave;
-        textEnemyCount.text = enemySpawner.CurrentEnemyCount + "/" + enemySpawner.MaxEnemyCount;
+        textEnemyCount.text = enemySpawner.CurrentEnemyCount + "/" + enemySpawner.MaxEnemyCount *2;
     }
 }
 

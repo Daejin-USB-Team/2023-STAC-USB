@@ -7,6 +7,7 @@ TagManager:
   - Tile
   - Enemy
   - Tower
+  - EnemyHP
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - uuu
   m_SortingLayers:
   - name: Default
     uniqueID: 0
