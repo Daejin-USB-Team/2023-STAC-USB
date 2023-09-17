@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f9f248616a1c2494d8dc388f1920af2b
+guid: 51e91b14661d4aa458cf268e78d2f07f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7989566739760955795
-    second: infinity_0
+      213: 6860925172009942091
+    second: "\uC2A4\uD06C\uB9B0\uC0F7_2023-08-30_222048-removebg-preview_0"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -94,29 +94,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: infinity_0
+      name: "\uC2A4\uD06C\uB9B0\uC0F7_2023-08-30_222048-removebg-preview_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 125
-        width: 512
-        height: 262
+        x: 5
+        y: 5
+        width: 386
+        height: 386
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3914ab88e94a0ee60800000000000000
-      internalID: 7989566739760955795
+      spriteID: b4c303cd717e63f50800000000000000
+      internalID: 6860925172009942091
       vertices: []
       indices: 
       edges: []
@@ -140,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      infinity_0: 7989566739760955795
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

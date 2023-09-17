@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f9f248616a1c2494d8dc388f1920af2b
+guid: 3bfeca1d73a52f94a98d25f8982d6ae0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7989566739760955795
-    second: infinity_0
+      213: 3716092259700582074
+    second: "\uC2A4\uD06C\uB9B0\uC0F7 2023-09-12 200233_0"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -106,17 +106,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: infinity_0
+      name: "\uC2A4\uD06C\uB9B0\uC0F7 2023-09-12 200233_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 125
-        width: 512
-        height: 262
+        y: 0
+        width: 138
+        height: 137
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3914ab88e94a0ee60800000000000000
-      internalID: 7989566739760955795
+      spriteID: ab62804b836329330800000000000000
+      internalID: 3716092259700582074
       vertices: []
       indices: 
       edges: []
@@ -141,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      infinity_0: 7989566739760955795
+      "\uC2A4\uD06C\uB9B0\uC0F7 2023-09-12 200233_0": 3716092259700582074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

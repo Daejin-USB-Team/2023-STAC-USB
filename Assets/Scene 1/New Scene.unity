@@ -5592,7 +5592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605433095}
   m_Layer: 0
-  m_Name: gameOverPanel
+  m_Name: "\uD328\uBC30"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
