@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerTemplate:
   - {fileID: 11400000, guid: e404d9b0f96d3d545ad6f63dd6ea4b59, type: 2}
-  - {fileID: 11400000, guid: 4a5917c4f23eeb9418f826bd6025d55f, type: 2}
+  - {fileID: 11400000, guid: 8e49d878970dd5a45a56d6d78871e560, type: 2}
   - {fileID: 11400000, guid: fb842126e7923e84ba4c56bf19a41255, type: 2}
   - {fileID: 11400000, guid: bf9655086510b8a42822116fb41f50eb, type: 2}
   enemySpawner: {fileID: 266347680}
