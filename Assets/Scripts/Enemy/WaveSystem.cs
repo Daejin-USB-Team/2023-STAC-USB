@@ -13,7 +13,7 @@ public class WaveSystem : MonoBehaviour
 	private bool waveCheek;
 	// 웨이브 정보 출력을 위한 Get 프로퍼티 (현재 웨이브, 총 웨이브)
 	public	int				CurrentWave => currentWaveIndex+1;		// 시작이 0이기 때문에 +1
-	public	int				MaxWave => waves.Length;
+	public	int				MaxWave => waves.Length * 2;
 	public void Start()
 	{
 		StartCoroutine("AutoStartWave");
@@ -28,7 +28,7 @@ public class WaveSystem : MonoBehaviour
         {
 			waveCheek = true;
 		}
-		if(waveCheek == true && currentWaveIndex != 5)
+		if(waveCheek == true && currentWaveIndex != 3)
         {
 			waveCount = 30f;
 			waveCheek = false;
@@ -37,7 +37,7 @@ public class WaveSystem : MonoBehaviour
 		waveCount -= Time.deltaTime;
 		outputText.text = "다음 웨이브까지 남은 시간 :"+waveCount.ToString("F1");
 		Debug.Log(currentWaveIndex);
-		//Debug.Log(waves[currentWaveIndex]);
+		Debug.Log(enemySpawner.EnemyList.Count);
     }
     public void StartWave()
 	{

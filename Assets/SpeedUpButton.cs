@@ -27,12 +27,12 @@ public class SpeedControl : MonoBehaviour
         if (isDoubled)
         {
             Time.timeScale = 2f; // 2배속으로 설정
-            speedText.text = "2x Speed";
+           // speedText.text = "2x Speed";
         }
         else
         {
             Time.timeScale = 1f; // 정상 속도로 설정
-            speedText.text = "1x Speed";
+           // speedText.text = "1x Speed";
         }
     }
 

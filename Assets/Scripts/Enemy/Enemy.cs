@@ -127,11 +127,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            // 목표지점에 도달해서 사망할 때는 돈을 주지 않도록
-            gold = 0;
-            // 적 오브젝트 삭제
-            Destroy(gameObject);
-        }// 아직 이동할 wayPoints가 남아있다면
+            OnDie(EnemyDestroyType.Arrive);
+        }
     }
     private void NextMoveTo01()
     {
@@ -147,11 +144,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            // 목표지점에 도달해서 사망할 때는 돈을 주지 않도록
-            gold = 0;
-            // 적 오브젝트 삭제
-            Destroy(gameObject);
-        }// 아직 이동할 wayPoints가 남아있다면
+            OnDie(EnemyDestroyType.Arrive);
+        }
     }
 
     public void OnDie(EnemyDestroyType type)
