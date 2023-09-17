@@ -38,7 +38,30 @@ public class Enemy : MonoBehaviour
             // 적의 위치를 첫번째 wayPoint 위치로 설정
             transform.position = wayPoints[currentIndex].position;
         }
-
+        else if (enemyType == EnemyType.enemy3)
+        {
+            wayPointCount = wayPoints.Length;
+            this.wayPoints = new Transform[wayPointCount];
+            this.wayPoints = wayPoints;
+            // 적의 위치를 첫번째 wayPoint 위치로 설정
+            transform.position = wayPoints[currentIndex].position;
+        }
+        else if (enemyType == EnemyType.enemy4)
+        {
+            wayPointCount = wayPoints.Length;
+            this.wayPoints = new Transform[wayPointCount];
+            this.wayPoints = wayPoints;
+            // 적의 위치를 첫번째 wayPoint 위치로 설정
+            transform.position = wayPoints[currentIndex].position;
+        }
+        else if (enemyType == EnemyType.enemy5)
+        {
+            wayPointCount = wayPoints.Length;
+            this.wayPoints = new Transform[wayPointCount];
+            this.wayPoints = wayPoints;
+            // 적의 위치를 첫번째 wayPoint 위치로 설정
+            transform.position = wayPoints[currentIndex].position;
+        }
 
         // 적 이동/목표지점 설정 코루틴 함수 시작
         StartCoroutine("OnMove");
@@ -65,8 +88,30 @@ public class Enemy : MonoBehaviour
             // 적의 위치를 첫번째 wayPoint 위치로 설정
             transform.position = wayPoints01[currentIndex].position;
         }
-
-
+        else if (enemyType == EnemyType.enemy3)
+        {
+            wayPoint01Count = wayPoints01.Length;
+            this.wayPoints01 = new Transform[wayPoint01Count];
+            this.wayPoints01 = wayPoints01;
+            // 적의 위치를 첫번째 wayPoint 위치로 설정
+            transform.position = wayPoints01[currentIndex].position;
+        }
+        else if (enemyType == EnemyType.enemy4)
+        {
+            wayPoint01Count = wayPoints01.Length;
+            this.wayPoints01 = new Transform[wayPoint01Count];
+            this.wayPoints01 = wayPoints01;
+            // 적의 위치를 첫번째 wayPoint 위치로 설정
+            transform.position = wayPoints01[currentIndex].position;
+        }
+        else if (enemyType == EnemyType.enemy5)
+        {
+            wayPoint01Count = wayPoints01.Length;
+            this.wayPoints01 = new Transform[wayPoint01Count];
+            this.wayPoints01 = wayPoints01;
+            // 적의 위치를 첫번째 wayPoint 위치로 설정
+            transform.position = wayPoints01[currentIndex].position;
+        }
         // 적 이동/목표지점 설정 코루틴 함수 시작
         StartCoroutine("OnMove01");
     }

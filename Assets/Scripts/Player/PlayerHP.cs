@@ -10,6 +10,11 @@ public class PlayerHP : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHp;
     public Sprite emptyHp;
+    public GameObject gameOverPanel;
+    private void Start()
+    {
+        gameOverPanel.SetActive(false);
+    }
     public void TakeDamage(int damage)
     {
         // 현재 체력을 damage만큼 감소
@@ -19,6 +24,7 @@ public class PlayerHP : MonoBehaviour
         if (HpManager.health <= 0)
         {
             gameObject.SetActive(false);
+            gameOverPanel.SetActive(true);
         }
     }
 

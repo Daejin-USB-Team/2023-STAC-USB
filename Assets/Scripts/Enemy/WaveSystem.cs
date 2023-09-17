@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 public class WaveSystem : MonoBehaviour
 {
+	public GameObject WinPanel;
 	[SerializeField]
 	private	Wave[]			waves;					// 현재 스테이지의 모든 웨이브 정보
 	[SerializeField]
@@ -16,6 +17,7 @@ public class WaveSystem : MonoBehaviour
 	public	int				MaxWave => waves.Length * 2;
 	public void Start()
 	{
+		WinPanel.SetActive(false);
 		StartCoroutine("AutoStartWave");
 	}
 	private IEnumerator AutoStartWave()
@@ -30,9 +32,13 @@ public class WaveSystem : MonoBehaviour
 		}
 		if(waveCheek == true && currentWaveIndex != 3)
         {
-			waveCount = 30f;
+			waveCount = 20f;
 			waveCheek = false;
 			StartWave();
+		}
+		if(currentWaveIndex == 2 && enemySpawner.EnemyList.Count == 0)
+        {
+			WinPanel.SetActive(true);
 		}
 		waveCount -= Time.deltaTime;
 		outputText.text = "다음 웨이브까지 남은 시간 :"+waveCount.ToString("F1");
