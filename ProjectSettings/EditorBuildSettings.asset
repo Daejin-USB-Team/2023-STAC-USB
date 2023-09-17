@@ -22,9 +22,12 @@ EditorBuildSettings:
     guid: ac6520f6199fe8f429006212a51c3579
   - enabled: 0
     path: Assets/Scenes/InGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 85d4e5cde599b184f8d703716ad02a4b
   - enabled: 1
     path: Assets/Examples/Assets/UBlockly/Example/UGUIDemo.unity
     guid: 7f56260f8a8674203bf826c0311f17a9
+  - enabled: 0
+    path: Assets/Scene/New Scene.unity
+    guid: 06370ac8790346e46bd24f9a5cda76fd
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

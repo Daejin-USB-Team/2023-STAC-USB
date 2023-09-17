@@ -10,7 +10,7 @@ public class TowerWeapon : MonoBehaviour
 	[SerializeField]
 	private	TowerTemplate	towerTemplate;							// 타워 정보 (공격력, 공격속도 등)
 	[SerializeField]
-	private	Transform		spawnPoint;								// 발사체 생성 위치
+	private	Transform		spawnPoint;						    	// 발사체 생성 위치
 	[SerializeField]
 	private	WeaponType		weaponType;								// 무기 속성 설정
 	public	TowerWeapon		buffTower;

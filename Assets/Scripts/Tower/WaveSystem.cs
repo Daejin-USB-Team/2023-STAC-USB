@@ -37,7 +37,7 @@ public class WaveSystem : MonoBehaviour
 		waveCount -= Time.deltaTime;
 		outputText.text = "다음 웨이브까지 남은 시간 :"+waveCount.ToString("F1");
 		Debug.Log(currentWaveIndex);
-		Debug.Log(waves[currentWaveIndex]);
+		//Debug.Log(waves[currentWaveIndex]);
     }
     public void StartWave()
 	{
