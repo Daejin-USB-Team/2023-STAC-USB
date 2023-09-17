@@ -9,7 +9,9 @@ public class PlayerHP : MonoBehaviour
     public static int health = 5;
     public Image[] hearts;
     public Sprite fullHp;
-    public Sprite emptyHp; 
+    public Sprite emptyHp;
+    public GameObject gameOverPanel; // 게임 오버 패널 오브젝트 참조
+
     public void TakeDamage(float damage)
     {
         // 현재 체력을 damage만큼 감소
@@ -19,10 +21,12 @@ public class PlayerHP : MonoBehaviour
         if (HpManager.health <= 0 )
         {
             gameObject.SetActive(false);
+        // 게임 오버 패널을 활성화
+            gameOverPanel.SetActive(true);
         }
-    }
+}
 
-    private IEnumerator HitAlphaAnimation()
+private IEnumerator HitAlphaAnimation()
     {
         // 전체화면 크기로 배치된 imageScreen의 색상을 color 변수에 저장
         // imageScreen의 투명도를 40%로 설정
