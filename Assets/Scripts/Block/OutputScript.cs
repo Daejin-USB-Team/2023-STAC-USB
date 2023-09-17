@@ -16,52 +16,58 @@ public class OutputScript : MonoBehaviour
     private string receivedDataString;
     private int count;
     private MoveBlockCoding moveBlockCoding;
-    private TowerWeapon towerWeapon;
-    
+    private TimeStop timeStop;
     public void ReceiveInputFromTextPrintCmdtor(DataStruct inputData)
     {
+        //코드 실행시 전달받는 값
         receivedDataString = inputData.ToString();
         Debug.Log("다른 스크립트에서 전달 받은 input 값: " + inputData.ToString());
-        //outputText.text = receivedDataString; 
-
-        //가능하다면 고정형 튜토리얼 만들어보기
-        //문제 3개정도 더 만들기
-        //문제 출시버튼을 눌렀을때 어떤문제를 풀어야하는지 적어주기
-        //실행을 눌렀을때 정답 오답 처리 택스트 및 해당 씬 탈출
-        //버프 지급
-        
+       
+        //정답이 맞는지 체크하는 if문
         if (count == 0 && receivedDataString == "1")
         {
-            MoveBlockCoding.countNum++;
+            //게임 일시정지 해제
+            timeStop.isPaused = false;
+            //버프 지급
+            buff.TakeBuff();
+            //다음 문제 카운트
+            MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
+            //문제 결과 택스트 출력
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
-            Invoke("Setfalse", 3f);
-            Invoke("SetText",4f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText",2f);
         }
         else if(count == 1 && receivedDataString == "10")
         {
-            MoveBlockCoding.countNum++;
+            timeStop.isPaused = false;
+            buff.TakeBuff();
+            MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
-            Invoke("Setfalse", 3f);
-            Invoke("SetText", 4f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText", 2f);
         }
         else if (count == 2 && receivedDataString == "2")
         {
-            MoveBlockCoding.countNum++;
+            timeStop.isPaused = false;
+            buff.TakeBuff();
+            MoveBlockCoding.countNum++; count++;
             BlocklyUI.WorkspaceView.CleanViews();
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
-            Invoke("Setfalse", 3f);
-            Invoke("SetText", 4f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText", 2f);
         }
         else
         {
+            timeStop.isPaused = false;
             outputText.text = "오답입니다";
             BlocklyUI.WorkspaceView.CleanViews();
-            Invoke("Setfalse", 3f);
+            Invoke("Setfalse", 0.5f);
+            Invoke("SetText", 2f);
         }
     }
 
@@ -85,18 +91,16 @@ public class OutputScript : MonoBehaviour
         }
         else if (MoveBlockCoding.countNum == 2)
         {
-            outputText.text = "1.돌과 나무를 각각 1로 설정해주세요\n2.석궁에 돌과 나무를 더해주세요\n3.석궁을 출력해주세요.";
+            outputText.text = "1.벽돌과 나무를 1로 설정해주세요\n2.석궁에 벽돌과 나무를 더해주세요\n3.석궁을 출력해주세요.";
         }
     }
     // Start is called before the first frame update
     private void Start()
     {
-        SetText();
-        moveBlockCoding = GetComponent<MoveBlockCoding>();
-        towerWeapon = GetComponent<TowerWeapon>();
+        SetText(); 
+        timeStop = GetComponent<TimeStop>();
         count = MoveBlockCoding.countNum;
         buff = GetComponent<Buff>();
-
         // XML 파일 로드
         TextAsset xmlAsset = Resources.Load<TextAsset>(xmlPath);
         // XmlDocument 객체 생성

@@ -12,7 +12,7 @@ public class HpManager : MonoBehaviour
 
     void Update()
     {
-        foreach(Image img in hearts)
+        foreach (Image img in hearts)
         {
             img.sprite = emptyHp;
         }
@@ -28,6 +28,6 @@ public class HpManager : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-            
+
     }
 }
