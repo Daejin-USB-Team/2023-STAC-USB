@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca3ad606c80f8d40bd97d441fea5dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferMapName: InGame
+  transferMapName: Stage
 --- !u!1 &1421109080
 GameObject:
   m_ObjectHideFlags: 0
