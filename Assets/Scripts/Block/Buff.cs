@@ -15,7 +15,7 @@ public class Buff : MonoBehaviour
     }
     public void TakeBuff()
     {
-        StartCoroutine(OnBuffCoroutine(30));
+        StartCoroutine(OnBuffCoroutine(10));
     }
     IEnumerator OnBuffCoroutine(int time)
     {
@@ -39,7 +39,7 @@ public class Buff : MonoBehaviour
                 }
             }
             time--;
-            yield return new WaitForSeconds(25);
+            yield return new WaitForSeconds(10);
         }
         buffIcon.SetActive(false);
     }
