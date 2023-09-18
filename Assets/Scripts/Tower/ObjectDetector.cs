@@ -28,7 +28,7 @@ public class ObjectDetector : MonoBehaviour
 		{
 			return;
 		}
-
+		
 		// 타워 건설 버튼을 눌렀을 때
 		if ( towerSpawner.IsOnTowerButton )
 		{
@@ -65,6 +65,8 @@ public class ObjectDetector : MonoBehaviour
 			// 타워 건설을 취소했을 때
 			OnChangePreviousTileColor();
 		}
+		
+
 
 		// 마우스 왼쪽 버튼을 눌렀을 때
 		if ( Input.GetMouseButtonDown(0) )
