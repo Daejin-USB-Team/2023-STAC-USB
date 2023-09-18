@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3668636668539105183}
   - component: {fileID: 5342002859170787362}
   - component: {fileID: -7872569061991599405}
-  - component: {fileID: -7617653186691579265}
+  - component: {fileID: -8427737307680480159}
   m_Layer: 0
   m_Name: Tower01 1
   m_TagString: Tower
@@ -164,7 +164,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.59, z: 0.2}
   m_Center: {x: 0.14959997, y: 0, z: 0}
---- !u!95 &-7617653186691579265
+--- !u!95 &-8427737307680480159
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ Animator:
   m_GameObject: {fileID: 6541577686761330561}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f62bd92a1776f4a4bb5be558647fbac9, type: 2}
+  m_Controller: {fileID: 9100000, guid: bbc269573f979e94bb6c55567f5fd7d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
