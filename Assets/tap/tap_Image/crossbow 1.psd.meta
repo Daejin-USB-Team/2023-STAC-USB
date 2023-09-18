@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 8cd29c1519168074f902e6cd971aa929
+guid: a5a570e866411114285c006cfaba176c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6661956398358179675
-    second: "\uAE43\uBC1C_0"
+      213: 2343929035586578673
+    second: crossbow 1_0
+  - first:
+      213: 3476384224068016785
+    second: crossbow 1_1
+  - first:
+      213: 2180541319457806988
+    second: crossbow 1_2
+  - first:
+      213: -2968922613266512527
+    second: crossbow 1_3
+  - first:
+      213: -260032344215651283
+    second: crossbow 1_4
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,41 +106,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uAE43\uBC1C_0"
+      name: crossbow 1_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 273
-        width: 100
-        height: 160
+        x: 2
+        y: 2
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +124,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a058b6c3f9fb83a0800000000000000
-      internalID: -6661956398358179675
+      spriteID: 1f8acd80a0f478020800000000000000
+      internalID: 2343929035586578673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crossbow 1_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a985a78099e3030800000000000000
+      internalID: 3476384224068016785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crossbow 1_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a185ce6c6d24e10800000000000000
+      internalID: 2180541319457806988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crossbow 1_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 2
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17500aefc944cc6d0800000000000000
+      internalID: -2968922613266512527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crossbow 1_4
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2cf9ece5fd246cf0800000000000000
+      internalID: -260032344215651283
       vertices: []
       indices: 
       edges: []
@@ -153,7 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\uAE43\uBC1C_0": -6661956398358179675
+      crossbow 1_0: 2343929035586578673
+      crossbow 1_1: 3476384224068016785
+      crossbow 1_2: 2180541319457806988
+      crossbow 1_3: -2968922613266512527
+      crossbow 1_4: -260032344215651283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: b7cda2eea8167c04baa72cac90bc785e
+guid: 872d592e96d3dd945a403099e083560f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5333349321414413341
-    second: cannon_0
+      213: 1321142509957342022
+    second: cannon 1_0
   - first:
-      213: 4464646412449416814
-    second: cannon_1
+      213: 6990324452852517445
+    second: cannon 1_1
   - first:
-      213: 81700387527080288
-    second: cannon_2
+      213: 2282626184957019553
+    second: cannon 1_2
   - first:
-      213: -2129639114134660399
-    second: cannon_3
+      213: -4194091910533024649
+    second: cannon 1_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -103,39 +103,15 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cannon_0
+      name: cannon 1_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 0
+        x: 19
+        y: 2
         width: 31
         height: 31
       alignment: 0
@@ -145,18 +121,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e3f50aac032cf5b0800000000000000
-      internalID: -5333349321414413341
+      spriteID: 643eca3fc14a55210800000000000000
+      internalID: 1321142509957342022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cannon_1
+      name: cannon 1_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 0
+        x: 55
+        y: 2
         width: 31
         height: 31
       alignment: 0
@@ -166,18 +142,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6605c5e14c95fd30800000000000000
-      internalID: 4464646412449416814
+      spriteID: 54a4005bd0f920160800000000000000
+      internalID: 6990324452852517445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cannon_2
+      name: cannon 1_2
       rect:
         serializedVersion: 2
-        x: 92
-        y: 0
+        x: 91
+        y: 2
         width: 31
         height: 31
       alignment: 0
@@ -187,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0693090d112422100800000000000000
-      internalID: 81700387527080288
+      spriteID: 1a54e5ddb648daf10800000000000000
+      internalID: 2282626184957019553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cannon_3
+      name: cannon 1_3
       rect:
         serializedVersion: 2
-        x: 130
-        y: 0
-        width: 31
-        height: 35
+        x: 127
+        y: 2
+        width: 35
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1dad93e42800272e0800000000000000
-      internalID: -2129639114134660399
+      spriteID: 774f65de0a79bc5c0800000000000000
+      internalID: -4194091910533024649
       vertices: []
       indices: 
       edges: []
@@ -225,10 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cannon_0: -5333349321414413341
-      cannon_1: 4464646412449416814
-      cannon_2: 81700387527080288
-      cannon_3: -2129639114134660399
+      cannon 1_0: 1321142509957342022
+      cannon 1_1: 6990324452852517445
+      cannon 1_2: 2282626184957019553
+      cannon 1_3: -4194091910533024649
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
