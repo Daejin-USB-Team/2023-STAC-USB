@@ -50,6 +50,9 @@ public class TowerWeapon : MonoBehaviour
 	public	float		Slow		=> towerTemplate.weapon[level].slow;
 	public	float		Buff		=> towerTemplate.weapon[level].buff;
 	public	WeaponType	WeaponType	=> weaponType;
+
+	[SerializeField]
+	private Animator animator;
 	public	float		AddedDamage
 	{
 		set => addedDamage = Mathf.Max(0, value);
@@ -132,31 +135,34 @@ public class TowerWeapon : MonoBehaviour
 		}
 	}
 
-    private IEnumerator TryAttackCannon()
-    {
-        while (true)
-        {
-            // target을 공격하는게 가능한지 검사
-            if (IsPossibleToAttackTarget() == false)
-            {
-                ChangeState(WeaponState.SearchTarget);
-                break;
-            }
+	private IEnumerator TryAttackCannon()
+	{
+		while (true)
+		{
+			// target을 공격하는게 가능한지 검사
+			if (IsPossibleToAttackTarget() == false)
+			{
+				ChangeState(WeaponState.SearchTarget);
+				break;
+			}
 
-           
+			// attackRate 시간만큼 대기
+			yield return new WaitForSeconds(towerTemplate.weapon[level].rate);
 
-            // attackRate 시간만큼 대기
-            yield return new WaitForSeconds(towerTemplate.weapon[level].rate);
+			// 캐논 공격 (발사체 생성)
+			SpawnProjectile();
 
-            // 캐논 공격 (발사체 생성)
-            SpawnProjectile();
+			// 발사 애니메이션 재생
+			if (animator != null)
+			{
+				animator.SetTrigger("Shoot"); // "Shoot"는 애니메이터 컨트롤러에서 설정한 트리거 이름입니다.
+			}
+		}
+	}
 
-            
-        }
-    }
 
 
-    private IEnumerator TryAttackLaser()
+	private IEnumerator TryAttackLaser()
 	{
 		// 레이저, 레이저 타격 효과 활성화
 		EnableLaser();
