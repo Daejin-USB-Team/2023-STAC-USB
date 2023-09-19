@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimeStop : MonoBehaviour
 {
-    public GameObject pausePanel; // 일시 정지 패널 오브젝트
-
     public bool isPaused = false; // 게임 일시 정지 여부
 
     public string sliderTag = "EnemyHP";
