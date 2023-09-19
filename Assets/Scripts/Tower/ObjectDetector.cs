@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class ObjectDetector : MonoBehaviour
 {
+	public GameObject TowerPanel;
 	[SerializeField]
 	private	TowerSpawner	towerSpawner;
 	[SerializeField]
@@ -28,7 +29,7 @@ public class ObjectDetector : MonoBehaviour
 		{
 			return;
 		}
-		
+		/*
 		// 타워 건설 버튼을 눌렀을 때
 		if ( towerSpawner.IsOnTowerButton )
 		{
@@ -65,7 +66,7 @@ public class ObjectDetector : MonoBehaviour
 			// 타워 건설을 취소했을 때
 			OnChangePreviousTileColor();
 		}
-			
+			*/
 
 
 		// 마우스 왼쪽 버튼을 눌렀을 때
@@ -85,8 +86,15 @@ public class ObjectDetector : MonoBehaviour
 				// 광선에 부딪힌 오브젝트의 태그가 "Tile"이면
 				if ( hit.transform.CompareTag("Tile") )
 				{
-					// 타워를 생성하는 SpawnTower() 호출
-					towerSpawner.SpawnTower(hit.transform);
+					TowerPanel.transform.position = hit.transform.position;
+					TowerPanel.SetActive(true);
+					if (towerSpawner.IsOnTowerButton)
+					{
+						// 타워를 생성하는 SpawnTower() 호출
+						towerSpawner.SpawnTower(hit.transform); 
+						TowerPanel.SetActive(false);
+
+					}
 					// 타일의 색상을 원래 색상으로 변경
 					hit.transform.GetComponent<Tile>().OnColorReset();
 				}

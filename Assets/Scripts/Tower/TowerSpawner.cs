@@ -13,7 +13,7 @@ public class TowerSpawner : MonoBehaviour
 	private	SystemTextViewer	systemTextViewer;			// 돈 부족, 건설 불가와 같은 시스템 메시지 출력
 	private	bool				isOnTowerButton = false;	// 타워 건설 버튼을 눌렀는지 체크
 	private	GameObject			followTowerClone = null;	// 임시 타워 사용 완료 시 삭제를 위해 저장하는 변수
-	private	int					towerType;					// 타워 속성
+	public	int					towerType;					// 타워 속성
 
 	public	bool				IsOnTowerButton => isOnTowerButton;
 
@@ -37,21 +37,22 @@ public class TowerSpawner : MonoBehaviour
 		}
 
 		// 마우스를 따라다니는 임시 타워 생성
-		followTowerClone = Instantiate(towerTemplate[towerType].followTowerPrefab);
+		//followTowerClone = Instantiate(towerTemplate[towerType].followTowerPrefab);
 		// 타워 건설 버튼을 눌렀다고 설정
 		isOnTowerButton = true;
 		// 타워 건설을 취소할 수 있는 코루틴 함수 시작
-		StartCoroutine("OnTowerCancelSystem");
+		//StartCoroutine("OnTowerCancelSystem");
 	}
 
 	public void SpawnTower(Transform tileTransform)
 	{
 		// 타워 건설 버튼을 눌렀을 때만 타워 건설 가능
+		/*
 		if ( isOnTowerButton == false )
 		{
 			return;
 		}
-		
+		*/
 		Tile tile = tileTransform.GetComponent<Tile>();
 
 		// 2. 현재 타일의 위치에 이미 타워가 건설되어 있으면 타워 건설 X

@@ -51,7 +51,7 @@ public class TowerWeapon : MonoBehaviour
 	public	float		Buff		=> towerTemplate.weapon[level].buff;
 	public	WeaponType	WeaponType	=> weaponType;
 
-	[SerializeField]
+
 	private Animator animator;
 	public	float		AddedDamage
 	{
@@ -63,9 +63,13 @@ public class TowerWeapon : MonoBehaviour
 		set => buffLevel = Mathf.Max(0, value);
 		get => buffLevel;
 	}
-    
 
-    public void Setup(TowerSpawner towerSpawner, EnemySpawner enemySpawner, PlayerGold playerGold, Tile ownerTile)
+	void Start()
+	{
+		animator = GetComponent<Animator>();
+
+	}
+	public void Setup(TowerSpawner towerSpawner, EnemySpawner enemySpawner, PlayerGold playerGold, Tile ownerTile)
 	{
 		spriteRenderer		= GetComponent<SpriteRenderer>();
 		this.towerSpawner	= towerSpawner;
@@ -152,11 +156,7 @@ public class TowerWeapon : MonoBehaviour
 			// 캐논 공격 (발사체 생성)
 			SpawnProjectile();
 
-			// 발사 애니메이션 재생
-			if (animator != null)
-			{
-				animator.SetTrigger("Shoot"); // "Shoot"는 애니메이터 컨트롤러에서 설정한 트리거 이름입니다.
-			}
+			animator.SetTrigger("Shoot0");
 		}
 	}
 
