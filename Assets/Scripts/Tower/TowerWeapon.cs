@@ -50,6 +50,9 @@ public class TowerWeapon : MonoBehaviour
 	public	float		Slow		=> towerTemplate.weapon[level].slow;
 	public	float		Buff		=> towerTemplate.weapon[level].buff;
 	public	WeaponType	WeaponType	=> weaponType;
+
+
+	private Animator animator;
 	public	float		AddedDamage
 	{
 		set => addedDamage = Mathf.Max(0, value);
@@ -61,6 +64,11 @@ public class TowerWeapon : MonoBehaviour
 		get => buffLevel;
 	}
 
+	void Start()
+	{
+		animator = GetComponent<Animator>();
+
+	}
 	public void Setup(TowerSpawner towerSpawner, EnemySpawner enemySpawner, PlayerGold playerGold, Tile ownerTile)
 	{
 		spriteRenderer		= GetComponent<SpriteRenderer>();
@@ -131,12 +139,12 @@ public class TowerWeapon : MonoBehaviour
 		}
 	}
 
-	private	IEnumerator TryAttackCannon()
+	private IEnumerator TryAttackCannon()
 	{
-		while ( true )
+		while (true)
 		{
 			// target을 공격하는게 가능한지 검사
-			if ( IsPossibleToAttackTarget() == false )
+			if (IsPossibleToAttackTarget() == false)
 			{
 				ChangeState(WeaponState.SearchTarget);
 				break;
@@ -144,11 +152,15 @@ public class TowerWeapon : MonoBehaviour
 
 			// attackRate 시간만큼 대기
 			yield return new WaitForSeconds(towerTemplate.weapon[level].rate);
-			
+
 			// 캐논 공격 (발사체 생성)
 			SpawnProjectile();
+
+			animator.SetTrigger("Shoot0");
 		}
 	}
+
+
 
 	private IEnumerator TryAttackLaser()
 	{
