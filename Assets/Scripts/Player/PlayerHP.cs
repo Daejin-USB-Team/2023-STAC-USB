@@ -11,6 +11,10 @@ public class PlayerHP : MonoBehaviour
     public Sprite fullHp;
     public Sprite emptyHp;
     public GameObject gameOverPanel;
+    public void HpFull()
+    {
+        HpManager.health = 5;
+    }
     private void Start()
     {
         gameOverPanel.SetActive(false);
