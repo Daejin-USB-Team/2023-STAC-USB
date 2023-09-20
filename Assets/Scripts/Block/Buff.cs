@@ -7,7 +7,6 @@ public class Buff : MonoBehaviour
 {
     public TowerWeapon towerWeapon;
     public GameObject buffIcon;
-    private float ddamage;
     private bool buff = false;
     private void Start()
     {
@@ -31,7 +30,6 @@ public class Buff : MonoBehaviour
                 {
                     // 버프에 의해 공격력 증가
                     weapon.AddedDamage = weapon.Damage + 5f;
-                    ddamage = weapon.AddedDamage;
                 }
                 else
                 {
@@ -45,6 +43,5 @@ public class Buff : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(ddamage);
     }
 }

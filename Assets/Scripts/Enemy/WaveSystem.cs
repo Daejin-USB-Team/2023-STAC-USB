@@ -28,20 +28,27 @@ public class WaveSystem : MonoBehaviour
     {
         if(waveCount < 0)
         {
+			//웨이브 카운트가 0초 미만이 되면 웨이브 체크를 활성화
 			waveCheek = true;
 		}
-		if(waveCheek == true && currentWaveIndex != 3)
+		//만약 웨이브 체크가 활성화 이면서 현재 웨이브가 2웨이브 미만이면
+		if(waveCheek == true && currentWaveIndex != 2)
         {
+			//카운트를 20으로 설정
 			waveCount = 20f;
 			waveCheek = false;
+			//웨이브 시작
 			StartWave();
 		}
+		//만약 현제 웨이브가 2이고 적이 다 죽으면
 		if(currentWaveIndex == 2 && enemySpawner.EnemyList.Count == 0)
 		{
-			waveCheek = false;
+			//승리 패널 활성화
 			WinPanel.SetActive(true);
 		}
+		//웨이브 카운트 감소
 		waveCount -= Time.deltaTime;
+		//남은 시간 표시
 		outputText.text = "다음 웨이브까지 남은 시간 :"+waveCount.ToString("F1");
 		Debug.Log(currentWaveIndex);
 		Debug.Log(enemySpawner.EnemyList.Count);

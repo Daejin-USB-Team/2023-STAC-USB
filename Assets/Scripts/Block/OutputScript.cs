@@ -36,7 +36,9 @@ public class OutputScript : MonoBehaviour
             //문제 결과 택스트 출력
             outputText.text = "정답입니다";
             Debug.Log("정답입니다아");
+            //패널 비활성화
             Invoke("Setfalse", 0.5f);
+            //다음 문제
             Invoke("SetText",2f);
         }
         else if(count == 1 && receivedDataString == "10")
@@ -97,10 +99,13 @@ public class OutputScript : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        SetText(); 
+        //문제 텍스트
+        SetText();
+
         timeStop = GetComponent<TimeStop>();
         count = MoveBlockCoding.countNum;
         buff = GetComponent<Buff>();
+
         // XML 파일 로드
         TextAsset xmlAsset = Resources.Load<TextAsset>(xmlPath);
         // XmlDocument 객체 생성
