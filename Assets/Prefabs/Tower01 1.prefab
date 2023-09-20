@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8bcbf7212426e74fbeb59bbcaa5d6a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerTemplate: {fileID: 11400000, guid: e404d9b0f96d3d545ad6f63dd6ea4b59, type: 2}
+  towerTemplate: {fileID: 11400000, guid: 8e49d878970dd5a45a56d6d78871e560, type: 2}
   spawnPoint: {fileID: 2742471577525000424}
   weaponType: 0
   buffTower: {fileID: 0}
@@ -143,7 +143,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 0
-  animator: {fileID: 0}
 --- !u!65 &-7872569061991599405
 BoxCollider:
   m_ObjectHideFlags: 0

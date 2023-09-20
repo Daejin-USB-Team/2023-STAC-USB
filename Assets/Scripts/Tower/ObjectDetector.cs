@@ -98,13 +98,16 @@ public class ObjectDetector : MonoBehaviour
 					// 타일의 색상을 원래 색상으로 변경
 					hit.transform.GetComponent<Tile>().OnColorReset();
 				}
+				/*
 				// 타워를 선택하면 해당 타워 정보를 출력하는 타워 정보창 On
 				else if ( hit.transform.CompareTag("Tower") )
 				{
 					towerDataViewer.OnPanel(hit.transform);
 				}
+				*/
 			}
 		}
+		/*
 		else if ( Input.GetMouseButtonUp(0) )
 		{
 			// 마우스를 눌렀을 때 선택한 오브젝트가 없거나 선택한 오브젝트가 타워가 아니면
@@ -116,6 +119,7 @@ public class ObjectDetector : MonoBehaviour
 
 			hitTransform = null;
 		}
+		*/
 	}
 
 	private void OnChangePreviousTileColor()
