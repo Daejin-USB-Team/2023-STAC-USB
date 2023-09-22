@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.EventSystems;
 
 public class ObjectDetector : MonoBehaviour
@@ -13,15 +14,34 @@ public class ObjectDetector : MonoBehaviour
 	private	Ray				ray;
 	private	RaycastHit		hit;
 	private	Transform		hitTransform = null;			// 마우스 픽킹으로 선택한 오브젝트 임시 저장
-	private	Transform		previousHitTransform = null;	// 마우스가 직전에 머물렀던 타일 정보 저장용
-
+	private	Transform		previousHitTransform = null;    // 마우스가 직전에 머물렀던 타일 정보 저장용
+	private	Transform lastClickedTransform;
 	private void Awake()
 	{
 		// "MainCamera" 태그를 가지고 있는 오브젝트 탐색 후 Camera 컴포넌트 정보 전달
 		// GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 와 동일
 		mainCamera = Camera.main;
 	}
+	void Start()
+	{
+		StartCoroutine(WaitForInput());
+	}
+	private IEnumerator WaitForInput()
+	{
+		while (true)
+		{
+			yield return null; // 한 프레임 대기
 
+			if (towerSpawner.IsOnTowerButton)
+			{
+				Debug.Log("isonTower?" + towerSpawner.IsOnTowerButton);
+				// 타워를 생성하는 SpawnTower() 호출
+				towerSpawner.SpawnTower(lastClickedTransform);
+				TowerPanel.SetActive(false);
+
+			}
+		}
+	}
 	private void Update()
 	{
 		// 마우스가 UI에 머물러 있을 때는 아래 코드가 실행되지 않도록 함
@@ -82,16 +102,19 @@ public class ObjectDetector : MonoBehaviour
 			if ( Physics.Raycast(ray, out hit, Mathf.Infinity) )
 			{
 				hitTransform = hit.transform;
-
 				// 광선에 부딪힌 오브젝트의 태그가 "Tile"이면
 				if ( hit.transform.CompareTag("Tile") )
 				{
-					TowerPanel.transform.position = hit.transform.position;
+					TowerPanel.transform.position = hit.transform.position; 
+					lastClickedTransform = hit.transform;
+					Debug.Log(lastClickedTransform);
 					TowerPanel.SetActive(true);
+					//towerSpawner.SpawnTower(lastClickedTransform);
 					if (towerSpawner.IsOnTowerButton)
 					{
+						Debug.Log("isonTower?"+ towerSpawner.IsOnTowerButton);
 						// 타워를 생성하는 SpawnTower() 호출
-						towerSpawner.SpawnTower(hit.transform); 
+						towerSpawner.SpawnTower(lastClickedTransform);
 						TowerPanel.SetActive(false);
 
 					}
